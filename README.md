@@ -1,20 +1,24 @@
+<div align="center">
+
 # ini Theme
 
 > The official theme for [ini.so](https://ini.so).
 
 Designed to provide a focused, high-contrast, and aesthetically pleasing coding experience. Built on a refined Tailwind CSS color scale, it creates a "shipping-native" atmosphere perfect for long coding sessions.
 
-<p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=startupintell.ini-theme">
-    <img src="https://img.shields.io/visual-studio-marketplace/v/startupintell.ini-theme?style=flat-square&label=VS%20Marketplace" alt="VS Marketplace Version" />
+    <img src="https://img.shields.io/visual-studio-marketplace/v/startupintell.ini-theme?style=for-the-badge&label=VS%20Marketplace" alt="VS Marketplace Version" />
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=startupintell.ini-theme">
+    <img src="https://img.shields.io/visual-studio-marketplace/i/startupintell.ini-theme?style=for-the-badge&label=Installs" alt="VS Marketplace Installs" />
   </a>
   <a href="https://open-vsx.org/extension/startupintell/ini-theme">
-    <img src="https://img.shields.io/open-vsx/v/startupintell/ini-theme?style=flat-square&label=Open%20VSX" alt="Open VSX Version" />
+    <img src="https://img.shields.io/open-vsx/v/startupintell/ini-theme?style=for-the-badge&label=Open%20VSX" alt="Open VSX Version" />
   </a>
-  <a href="https://github.com/startupintell/ini-theme/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/startupintell/ini-theme?style=flat-square" alt="License" />
+  <a href="https://open-vsx.org/extension/startupintell/ini-theme">
+    <img src="https://img.shields.io/open-vsx/dt/startupintell/ini-theme?style=for-the-badge" alt="Open VSX Installs" />
   </a>
-</p>
+</div>
 
 ## Compatibility
 
