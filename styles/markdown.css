@@ -1,11 +1,11 @@
 /* Markdown Preview Styles */
 
-/* 选择 */
+/* Selection */
 ::selection {
   background-color: #00ff0030;
 }
 
-/* 基础字体优化 */
+/* Basic Typography Optimization */
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -15,7 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 标题样式 */
+/* Heading Styles */
 h1,
 h2,
 h3,
@@ -47,7 +47,7 @@ h3 {
   font-size: 1.1em;
 }
 
-/* 链接颜色 - 使用主题色 */
+/* Link color - using theme colors */
 a {
   color: var(--vscode-textLink-foreground);
   text-decoration: none;
@@ -57,7 +57,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* 代码块样式 */
+/* Code block styles */
 code {
   font-family: 'SF Mono', Monaco, Menlo, Consolas, 'Ubuntu Mono', 'Liberation Mono',
     'DejaVu Sans Mono', 'Courier New', monospace;
@@ -87,7 +87,7 @@ pre code {
   padding: 0;
 }
 
-/* 引用块 */
+/* Blockquote */
 blockquote {
   border-left: none !important;
   font-style: italic;
@@ -98,7 +98,7 @@ blockquote {
   border-radius: 1px !important;
 }
 
-/* 表格 */
+/* Table */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -125,8 +125,8 @@ ol {
   padding-left: 16px;
 }
 
-/* 浅色主题 - 编辑器选择模式下的代码行样式 */
-/* 鼠标悬停时移除左边框 */
+/* Light theme - Code line styles in editor selection mode */
+/* Remove left border on hover */
 .vscode-light.showEditorSelection .code-line:hover {
   border-left: none;
 }
@@ -135,27 +135,27 @@ ol {
   border-left: none;
 }
 
-/* 浅色主题 - 代码行伪元素移除左边框 */
+/* Light theme - Remove left border on code line pseudo-elements */
 .vscode-light.showEditorSelection .code-line:before {
   border-left: none !important;
 }
 
-/* 深色主题 - 代码行伪元素移除左边框 */
+/* Dark theme - Remove left border on code line pseudo-elements */
 .vscode-dark.showEditorSelection .code-line:before {
   border-left: none !important;
 }
 
-/* 浅色主题 - 当前活动行显示浅灰色左边框 */
+/* Light theme - Light gray left border for the current active line */
 .vscode-light.showEditorSelection .code-active-line:before {
   border-left: 1px solid #e5e5e5 !important;
 }
 
-/* 深色主题 - 当前活动行显示浅灰色左边框 */
+/* Dark theme - Light gray left border for the current active line */
 .vscode-dark.showEditorSelection .code-active-line:before {
   border-left: 1px solid #323232 !important;
 }
 
-/* 浅色主题 - 标题、分割线和表格边框颜色 */
+/* Light theme - Heading, horizontal rule, and table border colors */
 .vscode-light h1,
 .vscode-light h2,
 .vscode-light hr,
@@ -163,7 +163,7 @@ ol {
   border-color: rgba(0, 0, 0, 0);
 }
 
-/* 深色主题 - 标题、分割线和表格边框颜色 */
+/* Dark theme - Heading, horizontal rule, and table border colors */
 .vscode-dark h1,
 .vscode-dark h2,
 .vscode-dark hr,
