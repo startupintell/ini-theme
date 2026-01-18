@@ -2,19 +2,19 @@ import colors from './colors';
 import { ThemePalette, Palette, ThemeConfig } from './type';
 
 /**
- * 获取主题色板
- * @param config 主题配置
- * @returns 包含深色和浅色模式的色板
+ * Get theme palette
+ * @param config Theme configuration
+ * @returns Palette containing dark and light modes
  */
 export const getPalette = (config: ThemeConfig = {}): Palette => {
   const neutralScale = config.neutralScale || 'neutral';
-  const primaryScale = config.primaryScale || 'black'; // 默认改为黑白
+  const primaryScale = config.primaryScale || 'black'; // Default to black/white
 
-  // 获取选中的色板对象，如果不存在则使用默认值
+  // Get selected palette object, use default value if it doesn't exist
   const neutral = (colors[neutralScale as keyof typeof colors] || colors.neutral) as any;
   let primary = (colors[primaryScale as keyof typeof colors] || colors.black) as any;
 
-  // 特殊处理黑白模式 (Shadcn 风格)
+  // Special handling for black/white mode
   const isBlackPrimary = primaryScale === 'black';
 
   const light: ThemePalette = {

@@ -1,38 +1,38 @@
 /**
- * VS Code 主题构建脚本
+ * VS Code Theme Build Script
  *
- * 该脚本通过 palette 中的 Token 和主题映射逻辑，
- * 自动生成最终的主题 JSON 文件（light.json 和 dark.json）。
+ * This script automatically generates the final theme JSON files (light.json and dark.json)
+ * using the Token and theme mapping logic from the palette.
  */
 
 import { getTheme } from './theme';
 import * as fs from 'fs';
 import * as path from 'path';
 
-// 定义生成的 JSON 文件存放目录
+// Define the directory where the generated JSON files will be stored
 const themesDir = path.join(__dirname, '../themes');
 
-// 确保在写入之前目录已存在
+// Ensure the directory exists before writing
 if (!fs.existsSync(themesDir)) {
   fs.mkdirSync(themesDir, { recursive: true });
 }
 
 /**
- * 根据指定类型生成并写入单个主题文件
- * @param type 主题变体类型 ('light' 或 'dark')
+ * Generates and writes a single theme file based on the specified type
+ * @param type Theme variant type ('light' or 'dark')
  */
 const writeTheme = (type: 'light' | 'dark') => {
-  // 调用引擎生成对应类型的主题对象 (传入空对象作为默认配置)
+  // Call the engine to generate the theme object for the corresponding type (passing an empty object as default config)
   const theme = getTheme(type, {});
 
-  // 构建输出文件的绝对路径
+  // Construct the absolute path for the output file
   const filePath = path.join(themesDir, `${type}.json`);
 
-  // 将主题对象序列化为 JSON 并写入磁盘
+  // Serialize the theme object to JSON and write it to disk
   fs.writeFileSync(filePath, JSON.stringify(theme, null, 2));
-  console.log(`成功生成: ${filePath}`);
+  console.log(`Successfully generated: ${filePath}`);
 };
 
-// 执行构建流程：生成深色和浅色主题
+// Execute the build process: generate dark and light themes
 writeTheme('dark');
 writeTheme('light');

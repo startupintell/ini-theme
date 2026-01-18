@@ -1,0 +1,15 @@
+{
+  "extension.displayName": "ini Theme",
+  "extension.description": "ini.so 官方主題",
+  "config.title": "ini Theme",
+  "config.italicComments": "是否對註解使用斜體。",
+  "config.italicKeywords": "是否對關鍵字使用斜體。",
+  "config.boldKeywords": "是否對關鍵字使用粗體。",
+  "config.neutralScale": "選擇中性色調（背景和整體氛圍）。",
+  "config.primaryScale": "選擇主色調（高亮和游標）。",
+  "command.regenerate": "iniTheme: 重新生成主題",
+  "command.setDark": "iniTheme: 套用深色主題",
+  "command.setLight": "iniTheme: 套用淺色主題",
+  "command.setPrimaryScale": "iniTheme: 設定主色調",
+  "command.setNeutralScale": "iniTheme: 設定中性色調"
+}

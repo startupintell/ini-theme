@@ -1,85 +1,30 @@
-import {
-  actionColorsConfig,
-  actionBarConfig,
-  activityBarConfig,
-  agentConfig,
-  badgeConfig,
-  bannerColorsConfig,
-  baseColorsConfig,
-  breadcrumbsConfig,
-  buttonControlConfig,
-  chartConfig,
-  chatConfig,
-  commentsViewConfig,
-  commandCenterConfig,
-  debugConfig,
-  debugIconConfig,
-  diffEditorConfig,
-  dropdownConfig,
-  editorConfig,
-  editorGroupTabsConfig,
-  editorWidgetConfig,
-  extensionsConfig,
-  gaugeConfig,
-  gitConfig,
-  inlineChatConfig,
-  inputConfig,
-  interactiveConfig,
-  keybindingLabelConfig,
-  keybindingTableConfig,
-  listTreeConfig,
-  markdownConfig,
-  menuBarConfig,
-  mergeConflictConfig,
-  minimapConfig,
-  notebookConfig,
-  notificationConfig,
-  panelConfig,
-  peekViewConfig,
-  profilesConfig,
-  progressBarConfig,
-  quickPickerConfig,
-  scmGraphConfig,
-  scrollbarConfig,
-  settingsEditorConfig,
-  sideBarConfig,
-  snippetsConfig,
-  statusBarConfig,
-  symbolIconConfig,
-  terminalConfig,
-  testingConfig,
-  textColorsConfig,
-  titleBarConfig,
-  welcomePageConfig,
-  windowBorderConfig,
-} from './config';
-import { syntaxConfig } from './config/syntax';
+import * as config from './config';
 import { getPalette } from './palette';
 import { ThemeConfig } from './type';
 
 /**
- * 获取主题名称
- * @param type 主题变体类型 ('light' 或 'dark')
- * @returns 主题名称
+ * Get theme name
+ * @param type Theme variant type ('light' or 'dark')
+ * @returns Theme name
  */
 const getThemeName = (type: 'light' | 'dark') => {
   return `ini ${type === 'light' ? 'Light' : 'Dark'}`;
 };
 
 /**
- * 生成 VS Code 主题配置对象
- * @param type 主题变体类型 ('light' 或 'dark')
- * @param config 主题自定义选项
+ * Generate VS Code theme configuration object
+ * @param type Theme variant type ('light' or 'dark')
+ * @param config Theme customization options
  */
-export const getTheme = (type: 'light' | 'dark', config: ThemeConfig = {}) => {
-  // 获取主题名称
+export const getTheme = (type: 'light' | 'dark', options: ThemeConfig = {}) => {
+  // Get theme name
   const name = getThemeName(type);
 
-  // 获取动态调色板
-  const palette = getPalette(config)[type];
+  // Get dynamic palette
+  const palette = getPalette(options)[type];
 
-  // 获取语法高度颜色 (传入配置以支持斜体等)
-  const syntax = syntaxConfig(palette, config);
+  // Get syntax highlight colors (pass configuration to support italics, etc.)
+  const syntax = config.syntax(palette, options);
 
   return {
     $schema: 'vscode://schemas/color-theme',
@@ -89,164 +34,164 @@ export const getTheme = (type: 'light' | 'dark', config: ThemeConfig = {}) => {
     tokenColors: syntax.tokenColors,
     semanticTokenColors: syntax.semanticTokenColors,
     colors: {
-      // 基础颜色配置
-      ...baseColorsConfig(palette),
+      // Base color configuration
+      ...config.baseColors(palette),
 
-      // 窗口边框配置
-      ...windowBorderConfig(palette),
+      // Window border configuration
+      ...config.windowBorder(palette),
 
-      // 文本颜色配置
-      ...textColorsConfig(palette),
+      // Text color configuration
+      ...config.textColors(palette),
 
-      // 操作颜色配置
-      ...actionColorsConfig(palette),
+      // Action color configuration
+      ...config.actionColors(palette),
 
-      // 操作栏配置
-      ...actionBarConfig(palette),
+      // Action bar configuration
+      ...config.actionBar(palette),
 
-      // 仪表盘配置
-      ...gaugeConfig(palette),
+      // Gauge configuration
+      ...config.gauge(palette),
 
-      // 按钮和控件颜色配置
-      ...buttonControlConfig(palette),
+      // Button and control color configuration
+      ...config.buttonControl(palette),
 
-      // 下拉菜单颜色配置
-      ...dropdownConfig(palette),
+      // Dropdown color configuration
+      ...config.dropdown(palette),
 
-      // 输入框颜色配置
-      ...inputConfig(palette),
+      // Input color configuration
+      ...config.input(palette),
 
-      // 滚动条颜色配置
-      ...scrollbarConfig(palette),
+      // Scrollbar color configuration
+      ...config.scrollbar(palette),
 
-      // 徽章颜色配置
-      ...badgeConfig(palette),
+      // Badge color configuration
+      ...config.badge(palette),
 
-      // 进度条颜色配置
-      ...progressBarConfig(palette),
+      // Progress bar color configuration
+      ...config.progressBar(palette),
 
-      // 列表和树控件颜色配置
-      ...listTreeConfig(palette),
+      // List and tree control color configuration
+      ...config.listTree(palette),
 
-      // 活动栏配置
-      ...activityBarConfig(palette),
+      // Activity bar configuration
+      ...config.activityBar(palette),
 
-      // 配置文件与设置齿轮角标配置
-      ...profilesConfig(palette),
+      // Profiles and settings gear badge configuration
+      ...config.profiles(palette),
 
-      // 侧边栏配置
-      ...sideBarConfig(palette),
+      // Side bar configuration
+      ...config.sideBar(palette),
 
-      // Minimap 配置
-      ...minimapConfig(palette),
+      // Minimap configuration
+      ...config.minimap(palette),
 
-      // 编辑器组与标签页配置
-      ...editorGroupTabsConfig(palette),
+      // Editor groups and tabs configuration
+      ...config.editorGroupTabs(palette),
 
-      // 编辑器配置
-      ...editorConfig(palette),
+      // Editor configuration
+      ...config.editor(palette),
 
-      // 差异对比编辑器配置
-      ...diffEditorConfig(palette),
+      // Diff editor configuration
+      ...config.diffEditor(palette),
 
-      // Git 配置
-      ...gitConfig(palette),
+      // Git configuration
+      ...config.git(palette),
 
-      // SCM 图谱配置
-      ...scmGraphConfig(palette),
+      // SCM graph configuration
+      ...config.scmGraph(palette),
 
-      // 设置编辑器配置
-      ...settingsEditorConfig(palette),
+      // Settings editor configuration
+      ...config.settingsEditor(palette),
 
-      // 面包屑配置
-      ...breadcrumbsConfig(palette),
+      // Breadcrumbs configuration
+      ...config.breadcrumbs(palette),
 
-      // 代码片段配置
-      ...snippetsConfig(palette),
+      // Snippets configuration
+      ...config.snippets(palette),
 
-      // 符号图标配置
-      ...symbolIconConfig(palette),
+      // Symbol icon configuration
+      ...config.symbolIcon(palette),
 
-      // Notebook 配置
-      ...notebookConfig(palette),
+      // Notebook configuration
+      ...config.notebook(palette),
 
-      // 聊天配置
-      ...chatConfig(palette),
+      // Chat configuration
+      ...config.chat(palette),
 
-      // 内联聊天配置
-      ...inlineChatConfig(palette),
+      // Inline chat configuration
+      ...config.inlineChat(palette),
 
-      // 交互式窗口配置
-      ...interactiveConfig(palette),
+      // Interactive configuration
+      ...config.interactive(palette),
 
-      // 编辑器小部件配置
-      ...editorWidgetConfig(palette),
+      // Editor widget configuration
+      ...config.editorWidget(palette),
 
-      // Peek View 配置
-      ...peekViewConfig(palette),
+      // Peek view configuration
+      ...config.peekView(palette),
 
-      // 合并冲突配置
-      ...mergeConflictConfig(palette),
+      // Merge conflict configuration
+      ...config.mergeConflict(palette),
 
-      // 面板配置
-      ...panelConfig(palette),
+      // Panel configuration
+      ...config.panel(palette),
 
-      // 状态栏配置
-      ...statusBarConfig(palette),
+      // Status bar configuration
+      ...config.statusBar(palette),
 
-      // Markdown 配置
-      ...markdownConfig(palette),
+      // Markdown configuration
+      ...config.markdown(palette),
 
-      // Agent 配置
-      ...agentConfig(palette),
+      // Agent configuration
+      ...config.agent(palette),
 
-      // 图表配置
-      ...chartConfig(palette),
+      // Chart configuration
+      ...config.chart(palette),
 
-      // 评论视图配置
-      ...commentsViewConfig(palette),
+      // Comments view configuration
+      ...config.commentsView(palette),
 
-      // 终端配置
-      ...terminalConfig(palette),
+      // Terminal configuration
+      ...config.terminal(palette),
 
-      // 调试配置
-      ...debugConfig(palette),
+      // Debug configuration
+      ...config.debug(palette),
 
-      // 调试图标配置
-      ...debugIconConfig(palette),
+      // Debug icon configuration
+      ...config.debugIcon(palette),
 
-      // 测试配置
-      ...testingConfig(palette),
+      // Testing configuration
+      ...config.testing(palette),
 
-      // 标题栏配置
-      ...titleBarConfig(palette),
+      // Title bar configuration
+      ...config.titleBar(palette),
 
-      // 菜单栏配置
-      ...menuBarConfig(palette),
+      // Menu bar configuration
+      ...config.menuBar(palette),
 
-      // 控制中心配置
-      ...commandCenterConfig(palette),
+      // Command center configuration
+      ...config.commandCenter(palette),
 
-      // 通知中心配置
-      ...notificationConfig(palette),
+      // Notification configuration
+      ...config.notification(palette),
 
-      // 横幅配置
-      ...bannerColorsConfig(palette),
+      // Banner configuration
+      ...config.bannerColors(palette),
 
-      // 扩展配置
-      ...extensionsConfig(palette),
+      // Extensions configuration
+      ...config.extensions(palette),
 
-      // 快速选择
-      ...quickPickerConfig(palette),
+      // Quick picker configuration
+      ...config.quickPicker(palette),
 
-      // 欢迎页配置
-      ...welcomePageConfig(palette),
+      // Welcome page configuration
+      ...config.welcomePage(palette),
 
-      // 快捷键标签配置
-      ...keybindingLabelConfig(palette),
+      // Keybinding label configuration
+      ...config.keybindingLabel(palette),
 
-      // 快捷键表格配置
-      ...keybindingTableConfig(palette),
+      // Keybinding table configuration
+      ...config.keybindingTable(palette),
     },
   };
 };
