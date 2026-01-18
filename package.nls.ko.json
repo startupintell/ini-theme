@@ -1,0 +1,15 @@
+{
+  "extension.displayName": "ini Theme",
+  "extension.description": "ini.so 공식 테마",
+  "config.title": "ini Theme",
+  "config.italicComments": "주석에 이탤릭체 사용 여부.",
+  "config.italicKeywords": "키워드에 이탤릭체 사용 여부.",
+  "config.boldKeywords": "키워드에 굵게 사용 여부.",
+  "config.neutralScale": "중립 색상 스케일 선택 (배경 및 전체 분위기에 영향을 미칩니다).",
+  "config.primaryScale": "기본 강조 색상 선택 (하이라이트 및 커서에 영향을 미칩니다).",
+  "command.regenerate": "iniTheme: 테마 재생성",
+  "command.setDark": "iniTheme: 어두운 테마 설정",
+  "command.setLight": "iniTheme: 밝은 테마 설정",
+  "command.setPrimaryScale": "iniTheme: 기본 색상 설정",
+  "command.setNeutralScale": "iniTheme: 중립 색상 설정"
+}

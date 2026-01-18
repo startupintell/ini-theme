@@ -1,0 +1,15 @@
+{
+  "extension.displayName": "ini Theme",
+  "extension.description": "El tema oficial de ini.so",
+  "config.title": "ini Theme",
+  "config.italicComments": "Si se deben usar cursivas para los comentarios.",
+  "config.italicKeywords": "Si se deben usar cursivas para las palabras clave.",
+  "config.boldKeywords": "Si se deben usar negritas para las palabras clave.",
+  "config.neutralScale": "Seleccione la escala de colores neutros (afecta al fondo y a la atmósfera general).",
+  "config.primaryScale": "Seleccione el color de acento principal (afecta a los resaltados y al cursor).",
+  "command.regenerate": "iniTheme: Regenerar tema",
+  "command.setDark": "iniTheme: Establecer tema oscuro",
+  "command.setLight": "iniTheme: Establecer tema claro",
+  "command.setPrimaryScale": "iniTheme: Establecer color primario",
+  "command.setNeutralScale": "iniTheme: Establecer color neutro"
+}
