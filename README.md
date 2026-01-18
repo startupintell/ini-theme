@@ -1,6 +1,8 @@
-# ini Theme for VS Code
+# ini Theme
 
-The official VS Code theme for [ini.so](https://ini.so). Designed to provide a focused, high-contrast, and aesthetically pleasing coding experience that aligns with the ini.so design language.
+> The official theme for [ini.so](https://ini.so).
+
+Designed to provide a focused, high-contrast, and aesthetically pleasing coding experience. Built on a refined Tailwind CSS color scale, it creates a "shipping-native" atmosphere perfect for long coding sessions.
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=startupintell.ini-theme">
@@ -13,6 +15,19 @@ The official VS Code theme for [ini.so](https://ini.so). Designed to provide a f
     <img src="https://img.shields.io/github/license/startupintell/ini-theme?style=flat-square" alt="License" />
   </a>
 </p>
+
+## Compatibility
+
+**Built for VS Code, Perfect for Cursor or Antigravity.**
+
+Since `ini Theme` is built on the standard VS Code extension API, it works seamlessly across the entire ecosystem:
+
+- **VS Code** (Official)
+- **Cursor** (AI Code Editor)
+- **Antigravity** (Goole AI Code Editor)
+- **Windsurf / Codium** (Open VSX)
+- **GitHub Codespaces**
+- **Gitpod**
 
 ## Themes
 
