@@ -7,9 +7,9 @@
   "config.boldKeywords": "Whether to use bold for keywords.",
   "config.neutralScale": "Select the neutral color scale (affects background and overall atmosphere).",
   "config.primaryScale": "Select the primary accent color (affects highlights and cursor).",
-  "command.regenerate": "iniTheme: Regenerate Theme",
-  "command.setDark": "iniTheme: Set Dark Theme",
-  "command.setLight": "iniTheme: Set Light Theme",
-  "command.setPrimaryScale": "iniTheme: Set Primary Color",
-  "command.setNeutralScale": "iniTheme: Set Neutral Color"
+  "command.regenerate": "ini: Regenerate Theme",
+  "command.setDark": "ini: Set Dark Theme",
+  "command.setLight": "ini: Set Light Theme",
+  "command.setPrimaryScale": "ini: Set Primary Color",
+  "command.setNeutralScale": "ini: Set Neutral Color"
 }

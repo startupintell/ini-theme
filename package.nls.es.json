@@ -7,9 +7,9 @@
   "config.boldKeywords": "Si se deben usar negritas para las palabras clave.",
   "config.neutralScale": "Seleccione la escala de colores neutros (afecta al fondo y a la atmósfera general).",
   "config.primaryScale": "Seleccione el color de acento principal (afecta a los resaltados y al cursor).",
-  "command.regenerate": "iniTheme: Regenerar tema",
-  "command.setDark": "iniTheme: Establecer tema oscuro",
-  "command.setLight": "iniTheme: Establecer tema claro",
-  "command.setPrimaryScale": "iniTheme: Establecer color primario",
-  "command.setNeutralScale": "iniTheme: Establecer color neutro"
+  "command.regenerate": "ini: Regenerar tema",
+  "command.setDark": "ini: Establecer tema oscuro",
+  "command.setLight": "ini: Establecer tema claro",
+  "command.setPrimaryScale": "ini: Establecer color primario",
+  "command.setNeutralScale": "ini: Establecer color neutro"
 }

@@ -1,6 +1,6 @@
 import * as config from './config';
 import { getPalette } from './palette';
-import { ThemeConfig } from './type';
+import type { ThemeConfig } from './type';
 
 /**
  * Get theme name

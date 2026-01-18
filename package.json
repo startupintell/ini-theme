@@ -4,7 +4,7 @@
   "publisher": "startupintell",
   "description": "%extension.description%",
   "icon": "icon.png",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -59,24 +59,24 @@
       }
     ],
     "configuration": {
-      "title": "ini Theme",
+      "title": "ini",
       "properties": {
-        "iniTheme.italicComments": {
+        "ini.theme.italicComments": {
           "type": "boolean",
           "default": true,
           "description": "%config.italicComments%"
         },
-        "iniTheme.italicKeywords": {
+        "ini.theme.italicKeywords": {
           "type": "boolean",
           "default": false,
           "description": "%config.italicKeywords%"
         },
-        "iniTheme.boldKeywords": {
+        "ini.theme.boldKeywords": {
           "type": "boolean",
           "default": false,
           "description": "%config.boldKeywords%"
         },
-        "iniTheme.neutralScale": {
+        "ini.theme.neutralScale": {
           "type": "string",
           "enum": [
             "slate",
@@ -88,7 +88,7 @@
           "default": "neutral",
           "description": "%config.neutralScale%"
         },
-        "iniTheme.primaryScale": {
+        "ini.theme.primaryScale": {
           "type": "string",
           "enum": [
             "black",
@@ -118,23 +118,23 @@
     ],
     "commands": [
       {
-        "command": "iniTheme.regenerate",
+        "command": "ini.theme.regenerate",
         "title": "%command.regenerate%"
       },
       {
-        "command": "iniTheme.setDark",
+        "command": "ini.theme.setDark",
         "title": "%command.setDark%"
       },
       {
-        "command": "iniTheme.setLight",
+        "command": "ini.theme.setLight",
         "title": "%command.setLight%"
       },
       {
-        "command": "iniTheme.setPrimaryScale",
+        "command": "ini.theme.setPrimaryScale",
         "title": "%command.setPrimaryScale%"
       },
       {
-        "command": "iniTheme.setNeutralScale",
+        "command": "ini.theme.setNeutralScale",
         "title": "%command.setNeutralScale%"
       }
     ]

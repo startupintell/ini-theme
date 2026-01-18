@@ -14,8 +14,8 @@ export const activate = (context: vscode.ExtensionContext) => {
   // Listen for changes in the theme configuration
   context.subscriptions.push(
     vscode.workspace.onDidChangeConfiguration((e: vscode.ConfigurationChangeEvent) => {
-      // If any 'iniTheme' related configuration changes, regenerate the themes
-      if (e.affectsConfiguration('iniTheme')) {
+      // If any 'ini.theme' related configuration changes, regenerate the themes
+      if (e.affectsConfiguration('ini.theme')) {
         generateThemes(context);
       }
     }),
@@ -23,14 +23,14 @@ export const activate = (context: vscode.ExtensionContext) => {
 
   // Register the 'Regenerate theme' command
   context.subscriptions.push(
-    vscode.commands.registerCommand('iniTheme.regenerate', () => {
+    vscode.commands.registerCommand('ini.theme.regenerate', () => {
       generateThemes(context);
     }),
   );
 
   // Register the 'Apply dark theme' command
   context.subscriptions.push(
-    vscode.commands.registerCommand('iniTheme.setDark', async () => {
+    vscode.commands.registerCommand('ini.theme.setDark', async () => {
       // Generate themes without showing a reload prompt yet
       await generateThemes(context, false);
 
@@ -46,7 +46,7 @@ export const activate = (context: vscode.ExtensionContext) => {
 
   // Register the 'Apply light theme' command
   context.subscriptions.push(
-    vscode.commands.registerCommand('iniTheme.setLight', async () => {
+    vscode.commands.registerCommand('ini.theme.setLight', async () => {
       // Generate themes without showing a reload prompt yet
       await generateThemes(context, false);
 
@@ -62,7 +62,7 @@ export const activate = (context: vscode.ExtensionContext) => {
 
   // Register the 'Set primary color scale' command
   context.subscriptions.push(
-    vscode.commands.registerCommand('iniTheme.setPrimaryScale', async () => {
+    vscode.commands.registerCommand('ini.theme.setPrimaryScale', async () => {
       // Available primary color scales
       const primaryScales = [
         'black',
@@ -85,7 +85,7 @@ export const activate = (context: vscode.ExtensionContext) => {
 
       // Get current primary scale from configuration
       const currentScale = vscode.workspace
-        .getConfiguration('iniTheme')
+        .getConfiguration('ini.theme')
         .get<string>('primaryScale', 'black');
 
       // Prompt the user to select a primary scale
@@ -104,7 +104,7 @@ export const activate = (context: vscode.ExtensionContext) => {
         // Update the primary scale configuration
         await vscode.workspace
           .getConfiguration()
-          .update('iniTheme.primaryScale', selected.value, vscode.ConfigurationTarget.Global);
+          .update('ini.theme.primaryScale', selected.value, vscode.ConfigurationTarget.Global);
 
         // Regenerate themes and reload
         await generateThemes(context, false);
@@ -115,13 +115,13 @@ export const activate = (context: vscode.ExtensionContext) => {
 
   // Register the 'Set neutral color scale' command
   context.subscriptions.push(
-    vscode.commands.registerCommand('iniTheme.setNeutralScale', async () => {
+    vscode.commands.registerCommand('ini.theme.setNeutralScale', async () => {
       // Available neutral color scales
       const neutralScales = ['slate', 'gray', 'zinc', 'neutral', 'stone'];
 
       // Get current neutral scale from configuration
       const currentScale = vscode.workspace
-        .getConfiguration('iniTheme')
+        .getConfiguration('ini.theme')
         .get<'slate' | 'gray' | 'zinc' | 'neutral' | 'stone'>('neutralScale', 'neutral');
 
       // Prompt the user to select a neutral scale
@@ -140,7 +140,7 @@ export const activate = (context: vscode.ExtensionContext) => {
         // Update the neutral scale configuration
         await vscode.workspace
           .getConfiguration()
-          .update('iniTheme.neutralScale', selected.value, vscode.ConfigurationTarget.Global);
+          .update('ini.theme.neutralScale', selected.value, vscode.ConfigurationTarget.Global);
 
         // Regenerate themes and reload
         await generateThemes(context, false);
@@ -159,7 +159,7 @@ export const activate = (context: vscode.ExtensionContext) => {
  * @returns {ThemeConfig} An object containing all theme-related configurations.
  */
 const getThemeConfig = (): ThemeConfig => {
-  const config = vscode.workspace.getConfiguration('iniTheme');
+  const config = vscode.workspace.getConfiguration('ini.theme');
   return {
     italicComments: config.get<boolean>('italicComments'),
     italicKeywords: config.get<boolean>('italicKeywords'),

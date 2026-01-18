@@ -56,11 +56,11 @@ A "Paper" inspired light theme. Clean, crisp, and low-glare. Perfect for bright 
 
 You can customize the theme through the following settings in VS Code:
 
-- `iniTheme.italicComments`: Enable/disable italic for comments (Default: `true`).
-- `iniTheme.italicKeywords`: Enable/disable italic for keywords (Default: `false`).
-- `iniTheme.boldKeywords`: Enable/disable bold for keywords (Default: `false`).
-- `iniTheme.neutralScale`: Choose the neutral color scale for backgrounds (Options: `slate`, `gray`, `zinc`, `neutral`, `stone`).
-- `iniTheme.primaryScale`: Choose the primary accent color (Options: `black`, `blue`, `indigo`, `violet`, etc.).
+- `ini.theme.italicComments`: Enable/disable italic for comments (Default: `true`).
+- `ini.theme.italicKeywords`: Enable/disable italic for keywords (Default: `false`).
+- `ini.theme.boldKeywords`: Enable/disable bold for keywords (Default: `false`).
+- `ini.theme.neutralScale`: Choose the neutral color scale for backgrounds (Options: `slate`, `gray`, `zinc`, `neutral`, `stone`).
+- `ini.theme.primaryScale`: Choose the primary accent color (Options: `black`, `blue`, `indigo`, `violet`, etc.).
 
 > **Note**: After changing these settings, the extension will prompt you to reload the window to apply the changes.
 

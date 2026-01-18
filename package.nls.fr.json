@@ -7,9 +7,9 @@
   "config.boldKeywords": "Utiliser le gras pour les mots-clés.",
   "config.neutralScale": "Sélectionner l'échelle de couleurs neutres (affecte l'arrière-plan et l'atmosphère générale).",
   "config.primaryScale": "Sélectionner la couleur d'accentuation principale (affecte les points forts et le curseur).",
-  "command.regenerate": "iniTheme : Régénérer le thème",
-  "command.setDark": "iniTheme : Définir le thème sombre",
-  "command.setLight": "iniTheme : Définir le thème clair",
-  "command.setPrimaryScale": "iniTheme : Définir la couleur primaire",
-  "command.setNeutralScale": "iniTheme : Définir la couleur neutre"
+  "command.regenerate": "ini: Régénérer le thème",
+  "command.setDark": "ini: Définir le thème sombre",
+  "command.setLight": "ini: Définir le thème clair",
+  "command.setPrimaryScale": "ini: Définir la couleur primaire",
+  "command.setNeutralScale": "ini: Définir la couleur neutre"
 }

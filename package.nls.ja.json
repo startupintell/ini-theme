@@ -7,9 +7,9 @@
   "config.boldKeywords": "キーワードに太字を使用するかどうか。",
   "config.neutralScale": "ニュートラル色のスケールを選択（背景と全体の雰囲気に影響します）。",
   "config.primaryScale": "プライマリ・アクセントカラーを選択（ハイライトとカーソルに影響します）。",
-  "command.regenerate": "iniTheme: テーマを再生成",
-  "command.setDark": "iniTheme: ダークテーマを設定",
-  "command.setLight": "iniTheme: ライトテーマを設定",
-  "command.setPrimaryScale": "iniTheme: プライマリカラーを設定",
-  "command.setNeutralScale": "iniTheme: ニュートラルカラーを設定"
+  "command.regenerate": "ini: テーマを再生成",
+  "command.setDark": "ini: ダークテーマを設定",
+  "command.setLight": "ini: ライトテーマを設定",
+  "command.setPrimaryScale": "ini: プライマリカラーを設定",
+  "command.setNeutralScale": "ini: ニュートラルカラーを設定"
 }

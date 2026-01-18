@@ -7,9 +7,9 @@
   "config.boldKeywords": "是否對關鍵字使用粗體。",
   "config.neutralScale": "選擇中性色調（背景和整體氛圍）。",
   "config.primaryScale": "選擇主色調（高亮和游標）。",
-  "command.regenerate": "iniTheme: 重新生成主題",
-  "command.setDark": "iniTheme: 套用深色主題",
-  "command.setLight": "iniTheme: 套用淺色主題",
-  "command.setPrimaryScale": "iniTheme: 設定主色調",
-  "command.setNeutralScale": "iniTheme: 設定中性色調"
+  "command.regenerate": "ini: 重新生成主題",
+  "command.setDark": "ini: 套用深色主題",
+  "command.setLight": "ini: 套用淺色主題",
+  "command.setPrimaryScale": "ini: 設定主色調",
+  "command.setNeutralScale": "ini: 設定中性色調"
 }
