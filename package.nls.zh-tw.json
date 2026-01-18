@@ -15,5 +15,6 @@
   "command.setDark": "ini: 套用深色主題",
   "command.setLight": "ini: 套用淺色主題",
   "command.setPrimaryScale": "ini: 設定主色調",
-  "command.setNeutralScale": "ini: 設定中性色調"
+  "command.setNeutralScale": "ini: 設定中性色調",
+  "command.setBorderSubtleColor": "ini: 設定邊框顏色"
 }

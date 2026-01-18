@@ -15,5 +15,6 @@
   "command.setDark": "ini: 어두운 테마 설정",
   "command.setLight": "ini: 밝은 테마 설정",
   "command.setPrimaryScale": "ini: 기본 색상 설정",
-  "command.setNeutralScale": "ini: 중립 색상 설정"
+  "command.setNeutralScale": "ini: 중립 색상 설정",
+  "command.setBorderSubtleColor": "ini: 테두리 색상 설정"
 }

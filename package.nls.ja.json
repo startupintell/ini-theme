@@ -15,5 +15,6 @@
   "command.setDark": "ini: ダークテーマを設定",
   "command.setLight": "ini: ライトテーマを設定",
   "command.setPrimaryScale": "ini: プライマリカラーを設定",
-  "command.setNeutralScale": "ini: ニュートラルカラーを設定"
+  "command.setNeutralScale": "ini: ニュートラルカラーを設定",
+  "command.setBorderSubtleColor": "ini: 境界線の色を設定"
 }

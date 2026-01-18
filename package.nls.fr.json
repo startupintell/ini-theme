@@ -15,5 +15,6 @@
   "command.setDark": "ini: Définir le thème sombre",
   "command.setLight": "ini: Définir le thème clair",
   "command.setPrimaryScale": "ini: Définir la couleur primaire",
-  "command.setNeutralScale": "ini: Définir la couleur neutre"
+  "command.setNeutralScale": "ini: Définir la couleur neutre",
+  "command.setBorderSubtleColor": "ini: Définir la couleur de bordure"
 }

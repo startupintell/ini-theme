@@ -149,6 +149,37 @@ export const activate = (context: vscode.ExtensionContext) => {
     }),
   );
 
+  // Register the 'Set subtle border color' command
+  context.subscriptions.push(
+    vscode.commands.registerCommand('ini.theme.setBorderSubtleColor', async () => {
+      const borderColors = ['light', 'medium', 'transparent'] as const;
+
+      const currentColor = vscode.workspace
+        .getConfiguration('ini.theme')
+        .get<'light' | 'medium' | 'transparent'>('borderSubtleColor', 'light');
+
+      const selected = await vscode.window.showQuickPick(
+        borderColors.map((color) => ({
+          label: color.charAt(0).toUpperCase() + color.slice(1),
+          value: color,
+          description: color === currentColor ? 'Current selected' : undefined,
+        })),
+        {
+          placeHolder: `Select border color (Current: ${currentColor})`,
+        },
+      );
+
+      if (selected) {
+        await vscode.workspace
+          .getConfiguration()
+          .update('ini.theme.borderSubtleColor', selected.value, vscode.ConfigurationTarget.Global);
+
+        await generateThemes(context, false);
+        await vscode.commands.executeCommand('workbench.action.reloadWindow');
+      }
+    }),
+  );
+
   // Check and sync theme files on startup to ensure they match current configuration
   generateThemes(context, false);
 };

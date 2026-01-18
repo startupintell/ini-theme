@@ -15,5 +15,6 @@
   "command.setDark": "ini: Установить тёмную тему",
   "command.setLight": "ini: Установить светлую тему",
   "command.setPrimaryScale": "ini: Установить основной цвет",
-  "command.setNeutralScale": "ini: Установить нейтральный цвет"
+  "command.setNeutralScale": "ini: Установить нейтральный цвет",
+  "command.setBorderSubtleColor": "ini: Задать цвет рамки"
 }

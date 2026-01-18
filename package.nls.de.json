@@ -15,5 +15,6 @@
   "command.setDark": "ini: Dunkles Theme festlegen",
   "command.setLight": "ini: Helles Theme festlegen",
   "command.setPrimaryScale": "ini: Primärfarbe festlegen",
-  "command.setNeutralScale": "ini: Neutralfarbe festlegen"
+  "command.setNeutralScale": "ini: Neutralfarbe festlegen",
+  "command.setBorderSubtleColor": "ini: Rahmenfarbe festlegen"
 }
