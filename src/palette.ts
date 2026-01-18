@@ -1,0 +1,159 @@
+import colors from './colors';
+import { ThemePalette, Palette, ThemeConfig } from './type';
+
+/**
+ * 获取主题色板
+ * @param config 主题配置
+ * @returns 包含深色和浅色模式的色板
+ */
+export const getPalette = (config: ThemeConfig = {}): Palette => {
+  const neutralScale = config.neutralScale || 'neutral';
+  const primaryScale = config.primaryScale || 'black'; // 默认改为黑白
+
+  // 获取选中的色板对象，如果不存在则使用默认值
+  const neutral = (colors[neutralScale as keyof typeof colors] || colors.neutral) as any;
+  let primary = (colors[primaryScale as keyof typeof colors] || colors.black) as any;
+
+  // 特殊处理黑白模式 (Shadcn 风格)
+  const isBlackPrimary = primaryScale === 'black';
+
+  const light: ThemePalette = {
+    transparent: '#ffffff00',
+
+    primary: {
+      main: isBlackPrimary ? neutral[900] : primary[600],
+      hover: isBlackPrimary ? neutral[800] : primary[700],
+      surface: isBlackPrimary ? neutral[900] + '10' : primary[500] + '15',
+      text: isBlackPrimary ? neutral[950] : primary[700],
+    },
+
+    secondary: {
+      main: neutral[200],
+      hover: neutral[300],
+      text: neutral[800],
+      border: neutral[300],
+    },
+
+    bg: {
+      app: neutral[50],
+      panel: colors.white,
+      element: neutral[100],
+      input: colors.white,
+      active: neutral[200],
+    },
+
+    shadow: {
+      main: '#00000015',
+      strong: '#00000025',
+      scroll: '#00000000',
+    },
+
+    text: {
+      normal: neutral[900],
+      muted: neutral[500],
+      subtle: neutral[400],
+      inverse: colors.white,
+    },
+
+    border: {
+      subtle: neutral[100],
+      muted: neutral[300],
+      focus: isBlackPrimary ? neutral[900] : primary[600],
+    },
+
+    state: {
+      error: colors.red[600],
+      warning: colors.amber[600],
+      success: colors.emerald[600],
+      info: colors.sky[600],
+      errorBg: colors.red[50] + '80',
+    },
+
+    syntax: {
+      keyword: colors.fuchsia[600],
+      function: colors.sky[600],
+      class: colors.amber[600],
+      variable: colors.zinc[800],
+      parameter: colors.zinc[600],
+      property: colors.zinc[600],
+      string: colors.emerald[600],
+      constant: colors.violet[600],
+      regex: colors.red[600],
+      tag: colors.blue[600],
+      attribute: colors.violet[600],
+      comment: colors.zinc[400],
+      operator: colors.zinc[400],
+    },
+  };
+
+  const dark: ThemePalette = {
+    transparent: '#00000000',
+
+    primary: {
+      main: isBlackPrimary ? neutral[50] : primary[500],
+      hover: isBlackPrimary ? neutral[200] : primary[400],
+      surface: isBlackPrimary ? neutral[50] + '15' : primary[500] + '20',
+      text: isBlackPrimary ? neutral[100] : primary[400],
+    },
+
+    secondary: {
+      main: neutral[800],
+      hover: neutral[700],
+      text: neutral[200],
+      border: neutral[600],
+    },
+
+    bg: {
+      app: neutral[950],
+      panel: neutral[900],
+      element: neutral[800],
+      input: colors.black + '40',
+      active: neutral[800],
+    },
+
+    shadow: {
+      main: '#00000040',
+      strong: '#00000080',
+      scroll: '#00000000',
+    },
+
+    text: {
+      normal: neutral[200],
+      muted: neutral[400],
+      subtle: neutral[600],
+      inverse: neutral[950],
+    },
+
+    border: {
+      subtle: neutral[800],
+      muted: neutral[700],
+      focus: isBlackPrimary ? neutral[50] : primary[500],
+    },
+
+    state: {
+      error: colors.red[400],
+      warning: colors.amber[400],
+      success: colors.emerald[400],
+      info: colors.sky[400],
+      errorBg: colors.red[900] + '40',
+    },
+
+    syntax: {
+      keyword: colors.pink[400],
+      function: colors.blue[400],
+      class: colors.amber[400],
+      variable: colors.zinc[100],
+      parameter: colors.zinc[300],
+      property: colors.zinc[300],
+      string: colors.emerald[400],
+      constant: colors.violet[400],
+      regex: colors.rose[400],
+      tag: colors.pink[400],
+      attribute: colors.violet[400],
+      comment: colors.zinc[500],
+      operator: colors.zinc[500],
+    },
+  };
+
+  return { light, dark };
+};
