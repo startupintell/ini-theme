@@ -1,0 +1,15 @@
+{
+  "extension.displayName": "ini Theme",
+  "extension.description": "Официальная тема для ini.so",
+  "config.title": "ini Theme",
+  "config.italicComments": "Использовать ли курсив для комментариев.",
+  "config.italicKeywords": "Использовать ли курсив для ключевых слов.",
+  "config.boldKeywords": "Использовать ли жирный шрифт для ключевых слов.",
+  "config.neutralScale": "Выберите нейтральную цветовую шкалу (влияет на фон и общую атмосферу).",
+  "config.primaryScale": "Выберите основной акцентный цвет (влияет на подсветку и курсор).",
+  "command.regenerate": "ini: Пересоздать тему",
+  "command.setDark": "ini: Установить тёмную тему",
+  "command.setLight": "ini: Установить светлую тему",
+  "command.setPrimaryScale": "ini: Установить основной цвет",
+  "command.setNeutralScale": "ini: Установить нейтральный цвет"
+}
