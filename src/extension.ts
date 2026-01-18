@@ -4,53 +4,66 @@ import * as fs from 'fs';
 import { getTheme } from './theme';
 import { ThemeConfig } from './type';
 
+/**
+ * Activates the VS Code extension.
+ * This function registers commands and configuration listeners to manage the ini Theme.
+ *
+ * @param context The extension context provided by VS Code.
+ */
 export const activate = (context: vscode.ExtensionContext) => {
-  // Listen for configuration changes
+  // Listen for changes in the theme configuration
   context.subscriptions.push(
     vscode.workspace.onDidChangeConfiguration((e: vscode.ConfigurationChangeEvent) => {
+      // If any 'iniTheme' related configuration changes, regenerate the themes
       if (e.affectsConfiguration('iniTheme')) {
         generateThemes(context);
       }
     }),
   );
 
-  // Register command: Regenerate theme
+  // Register the 'Regenerate theme' command
   context.subscriptions.push(
     vscode.commands.registerCommand('iniTheme.regenerate', () => {
       generateThemes(context);
     }),
   );
 
-  // Register command: Apply dark theme
+  // Register the 'Apply dark theme' command
   context.subscriptions.push(
     vscode.commands.registerCommand('iniTheme.setDark', async () => {
+      // Generate themes without showing a reload prompt yet
       await generateThemes(context, false);
 
+      // Update the global workbench color theme setting to 'ini Dark'
       await vscode.workspace
         .getConfiguration()
         .update('workbench.colorTheme', 'ini Dark', vscode.ConfigurationTarget.Global);
 
-      // Auto reload window to apply theme
+      // Reload the window to ensure the new theme is applied correctly
       await vscode.commands.executeCommand('workbench.action.reloadWindow');
     }),
   );
 
-  // Register command: Apply light theme
+  // Register the 'Apply light theme' command
   context.subscriptions.push(
     vscode.commands.registerCommand('iniTheme.setLight', async () => {
+      // Generate themes without showing a reload prompt yet
       await generateThemes(context, false);
+
+      // Update the global workbench color theme setting to 'ini Light'
       await vscode.workspace
         .getConfiguration()
         .update('workbench.colorTheme', 'ini Light', vscode.ConfigurationTarget.Global);
 
-      // Auto reload window to apply theme
+      // Reload the window to ensure the new theme is applied correctly
       await vscode.commands.executeCommand('workbench.action.reloadWindow');
     }),
   );
 
-  // Register command: Set primary color scale
+  // Register the 'Set primary color scale' command
   context.subscriptions.push(
     vscode.commands.registerCommand('iniTheme.setPrimaryScale', async () => {
+      // Available primary color scales
       const primaryScales = [
         'black',
         'blue',
@@ -70,10 +83,12 @@ export const activate = (context: vscode.ExtensionContext) => {
         'sky',
       ];
 
+      // Get current primary scale from configuration
       const currentScale = vscode.workspace
         .getConfiguration('iniTheme')
         .get<string>('primaryScale', 'black');
 
+      // Prompt the user to select a primary scale
       const selected = await vscode.window.showQuickPick(
         primaryScales.map((scale) => ({
           label: scale.charAt(0).toUpperCase() + scale.slice(1),
@@ -86,25 +101,30 @@ export const activate = (context: vscode.ExtensionContext) => {
       );
 
       if (selected) {
+        // Update the primary scale configuration
         await vscode.workspace
           .getConfiguration()
           .update('iniTheme.primaryScale', selected.value, vscode.ConfigurationTarget.Global);
+
+        // Regenerate themes and reload
         await generateThemes(context, false);
-        // Auto reload window to apply theme
         await vscode.commands.executeCommand('workbench.action.reloadWindow');
       }
     }),
   );
 
-  // Register command: Set neutral color scale
+  // Register the 'Set neutral color scale' command
   context.subscriptions.push(
     vscode.commands.registerCommand('iniTheme.setNeutralScale', async () => {
+      // Available neutral color scales
       const neutralScales = ['slate', 'gray', 'zinc', 'neutral', 'stone'];
 
+      // Get current neutral scale from configuration
       const currentScale = vscode.workspace
         .getConfiguration('iniTheme')
         .get<'slate' | 'gray' | 'zinc' | 'neutral' | 'stone'>('neutralScale', 'neutral');
 
+      // Prompt the user to select a neutral scale
       const selected = await vscode.window.showQuickPick(
         neutralScales.map((scale) => ({
           label: scale.charAt(0).toUpperCase() + scale.slice(1),
@@ -117,24 +137,26 @@ export const activate = (context: vscode.ExtensionContext) => {
       );
 
       if (selected) {
+        // Update the neutral scale configuration
         await vscode.workspace
           .getConfiguration()
           .update('iniTheme.neutralScale', selected.value, vscode.ConfigurationTarget.Global);
 
+        // Regenerate themes and reload
         await generateThemes(context, false);
-
-        // Auto reload window to apply theme
         await vscode.commands.executeCommand('workbench.action.reloadWindow');
       }
     }),
   );
 
-  // Initial detection and configuration sync on startup to ensure generated JSON is up to date
+  // Check and sync theme files on startup to ensure they match current configuration
   generateThemes(context, false);
 };
 
 /**
- * Get current configuration object
+ * Retrieves the current theme configuration from VS Code workspace settings.
+ *
+ * @returns {ThemeConfig} An object containing all theme-related configurations.
  */
 const getThemeConfig = (): ThemeConfig => {
   const config = vscode.workspace.getConfiguration('iniTheme');
@@ -148,9 +170,10 @@ const getThemeConfig = (): ThemeConfig => {
 };
 
 /**
- * Dynamically generate theme JSON
- * @param context Extension context
- * @param showReloadPrompt Whether to show reload prompt (default: true)
+ * Dynamically generates theme JSON files based on the current configuration.
+ *
+ * @param context The extension context.
+ * @param showReloadPrompt Whether to prompt the user to reload the window (defaults to true).
  */
 const generateThemes = async (
   context: vscode.ExtensionContext,
@@ -160,19 +183,20 @@ const generateThemes = async (
   const themesDir = path.join(context.extensionPath, 'themes');
 
   try {
+    // Create the themes directory if it doesn't exist
     if (!fs.existsSync(themesDir)) {
       fs.mkdirSync(themesDir, { recursive: true });
     }
 
-    // Generate dark theme
+    // Generate and write the Dark theme JSON file
     const darkTheme = getTheme('dark', config);
     fs.writeFileSync(path.join(themesDir, 'dark.json'), JSON.stringify(darkTheme, null, 2));
 
-    // Generate light theme
+    // Generate and write the Light theme JSON file
     const lightTheme = getTheme('light', config);
     fs.writeFileSync(path.join(themesDir, 'light.json'), JSON.stringify(lightTheme, null, 2));
 
-    // Prompt user (only when needed)
+    // If needed, show an information message with a reload option
     if (showReloadPrompt) {
       const action = await vscode.window.showInformationMessage(
         'ini Theme has been updated. Reload window now to apply changes?',
@@ -185,6 +209,7 @@ const generateThemes = async (
       }
     }
   } catch (error) {
+    // Show an error message if theme generation fails
     vscode.window.showErrorMessage(`Failed to generate themes: ${error}`);
   }
 };

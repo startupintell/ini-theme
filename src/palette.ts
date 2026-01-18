@@ -17,9 +17,11 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
   // Special handling for black/white mode
   const isBlackPrimary = primaryScale === 'black';
 
+  // --- Light Theme Palette ---
   const light: ThemePalette = {
     transparent: '#ffffff00',
 
+    // Primary brand colors (uses neutral-900 if primaryScale is set to 'black')
     primary: {
       main: isBlackPrimary ? neutral[900] : primary[600],
       hover: isBlackPrimary ? neutral[800] : primary[700],
@@ -27,6 +29,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       text: isBlackPrimary ? neutral[950] : primary[700],
     },
 
+    // Secondary/neutral interactive elements
     secondary: {
       main: neutral[200],
       hover: neutral[300],
@@ -34,6 +37,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       border: neutral[300],
     },
 
+    // Background colors for various UI components
     bg: {
       app: neutral[50],
       panel: colors.white,
@@ -42,12 +46,14 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       active: neutral[200],
     },
 
+    // UI shadows and scroll indicators
     shadow: {
       main: '#00000015',
       strong: '#00000025',
       scroll: '#00000000',
     },
 
+    // General text colors
     text: {
       normal: neutral[900],
       muted: neutral[500],
@@ -55,12 +61,14 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       inverse: colors.white,
     },
 
+    // Border colors for dividers and focused elements
     border: {
       subtle: neutral[100],
       muted: neutral[300],
       focus: isBlackPrimary ? neutral[900] : primary[600],
     },
 
+    // Feedback states (error, warning, success, etc.)
     state: {
       error: colors.red[600],
       warning: colors.amber[600],
@@ -69,6 +77,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       errorBg: colors.red[50] + '80',
     },
 
+    // Syntax highlighting colors for the editor
     syntax: {
       keyword: colors.fuchsia[600],
       function: colors.sky[600],
@@ -86,9 +95,11 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
     },
   };
 
+  // --- Dark Theme Palette ---
   const dark: ThemePalette = {
     transparent: '#00000000',
 
+    // Primary brand colors (uses neutral-50 if primaryScale is set to 'black')
     primary: {
       main: isBlackPrimary ? neutral[50] : primary[500],
       hover: isBlackPrimary ? neutral[200] : primary[400],
@@ -96,6 +107,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       text: isBlackPrimary ? neutral[100] : primary[400],
     },
 
+    // Secondary/neutral interactive elements
     secondary: {
       main: neutral[800],
       hover: neutral[700],
@@ -103,6 +115,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       border: neutral[600],
     },
 
+    // Background colors for various UI components
     bg: {
       app: neutral[950],
       panel: neutral[900],
@@ -111,12 +124,14 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       active: neutral[800],
     },
 
+    // UI shadows and scroll indicators
     shadow: {
       main: '#00000040',
       strong: '#00000080',
       scroll: '#00000000',
     },
 
+    // General text colors
     text: {
       normal: neutral[200],
       muted: neutral[400],
@@ -124,12 +139,14 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       inverse: neutral[950],
     },
 
+    // Border colors for dividers and focused elements
     border: {
       subtle: neutral[800],
       muted: neutral[700],
       focus: isBlackPrimary ? neutral[50] : primary[500],
     },
 
+    // Feedback states (error, warning, success, etc.)
     state: {
       error: colors.red[400],
       warning: colors.amber[400],
@@ -138,6 +155,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       errorBg: colors.red[900] + '40',
     },
 
+    // Syntax highlighting colors for the editor
     syntax: {
       keyword: colors.pink[400],
       function: colors.blue[400],
