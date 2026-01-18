@@ -1,4 +1,12 @@
+/**
+ * Theme palette interface
+ *
+ * Defines all color configurations required for VS Code theme, including primary colors,
+ * background colors, text colors, border colors, etc.
+ * Each color value is a hexadecimal color string (e.g., "#ffffff" or "#ffffff00" with transparency).
+ */
 export interface ThemePalette {
+  // Transparent color
   transparent: string;
 
   // Primary brand colors
@@ -76,21 +84,79 @@ export interface ThemePalette {
 }
 
 /**
- * Represents the complete palette containing both light and dark variants
+ * Complete palette interface
+ *
+ * Contains both light and dark theme variant palettes.
+ * Used to generate complete VS Code theme configuration.
  */
 export interface Palette {
-  light: ThemePalette; // Light theme variant palette
-  dark: ThemePalette; // Dark theme variant palette
+  /**
+   * Light theme palette
+   */
+  light: ThemePalette;
+
+  /**
+   * Dark theme palette
+   */
+  dark: ThemePalette;
 }
 
 /**
  * Configuration options for theme customization
+ *
+ * All options are optional and will use default values if not specified.
  */
 export interface ThemeConfig {
-  italicComments?: boolean; // Enable italic style for comments
-  italicKeywords?: boolean; // Enable italic style for keywords
-  boldKeywords?: boolean; // Enable bold weight for keywords
-  neutralScale?: 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone'; // Choice of neutral color palette
-  primaryScale?: string; // Custom primary color scale (hex or name)
-  borderSubtleColor?: 'light' | 'medium' | 'transparent'; // Border subtle color option
+  /**
+   * Enable italic style for comments
+   *
+   * @default true
+   */
+  italicComments?: boolean;
+
+  /**
+   * Enable italic style for keywords
+   *
+   * @default false
+   */
+  italicKeywords?: boolean;
+
+  /**
+   * Enable bold weight for keywords
+   *
+   * @default false
+   */
+  boldKeywords?: boolean;
+
+  /**
+   * Neutral color scale selection
+   *
+   * Affects background colors and overall atmosphere.
+   * Options: 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone'
+   *
+   * @default 'neutral'
+   */
+  neutralScale?: 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone';
+
+  /**
+   * Primary color scale selection
+   *
+   * Custom primary color, can be a color name (e.g., 'black', 'blue') or a hexadecimal color value.
+   * Affects highlight colors, cursor, and other accent elements.
+   *
+   * @default 'black'
+   */
+  primaryScale?: string;
+
+  /**
+   * Border subtle color option
+   *
+   * Controls the intensity of subtle borders.
+   * - 'light': Light border (neutral-100)
+   * - 'medium': Medium border (neutral-200)
+   * - 'transparent': Transparent border
+   *
+   * @default 'light'
+   */
+  borderSubtleColor?: 'light' | 'medium' | 'transparent';
 }
