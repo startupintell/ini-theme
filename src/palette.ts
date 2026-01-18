@@ -9,6 +9,7 @@ import { ThemePalette, Palette, ThemeConfig } from './type';
 export const getPalette = (config: ThemeConfig = {}): Palette => {
   const neutralScale = config.neutralScale || 'neutral';
   const primaryScale = config.primaryScale || 'black'; // Default to black/white
+  const borderSubtleColor = config.borderSubtleColor || 'light';
 
   // Get selected palette object, use default value if it doesn't exist
   const neutral = (colors[neutralScale as keyof typeof colors] || colors.neutral) as any;
@@ -16,6 +17,21 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
 
   // Special handling for black/white mode
   const isBlackPrimary = primaryScale === 'black';
+
+  // Helper function to get border subtle color based on config
+  const getBorderSubtleColor = (theme: 'light' | 'dark'): string => {
+    if (borderSubtleColor === 'transparent') {
+      return theme === 'light' ? '#ffffff00' : '#00000000';
+    }
+
+    if (borderSubtleColor === 'medium') {
+      // For dark theme, use corresponding dark value
+      return theme === 'light' ? neutral[200] : neutral[700];
+    }
+    
+    // Default to light (neutral-100 for light, neutral-800 for dark)
+    return theme === 'light' ? neutral[100] : neutral[800];
+  };
 
   // --- Light Theme Palette ---
   const light: ThemePalette = {
@@ -63,7 +79,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
 
     // Border colors for dividers and focused elements
     border: {
-      subtle: neutral[100],
+      subtle: getBorderSubtleColor('light'),
       muted: neutral[300],
       focus: isBlackPrimary ? neutral[900] : primary[600],
     },
@@ -141,7 +157,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
 
     // Border colors for dividers and focused elements
     border: {
-      subtle: neutral[800],
+      subtle: getBorderSubtleColor('dark'),
       muted: neutral[700],
       focus: isBlackPrimary ? neutral[50] : primary[500],
     },

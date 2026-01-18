@@ -4,7 +4,7 @@
   "publisher": "startupintell",
   "description": "%extension.description%",
   "icon": "icon.png",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -110,6 +110,21 @@
           ],
           "default": "black",
           "description": "%config.primaryScale%"
+        },
+        "ini.theme.borderSubtleColor": {
+          "type": "string",
+          "enum": [
+            "light",
+            "medium",
+            "transparent"
+          ],
+          "enumDescriptions": [
+            "%config.borderSubtleColor.light%",
+            "%config.borderSubtleColor.medium%",
+            "%config.borderSubtleColor.transparent%"
+          ],
+          "default": "light",
+          "description": "%config.borderSubtleColor%"
         }
       }
     },

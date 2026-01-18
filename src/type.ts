@@ -92,4 +92,5 @@ export interface ThemeConfig {
   boldKeywords?: boolean; // Enable bold weight for keywords
   neutralScale?: 'slate' | 'gray' | 'zinc' | 'neutral' | 'stone'; // Choice of neutral color palette
   primaryScale?: string; // Custom primary color scale (hex or name)
+  borderSubtleColor?: 'light' | 'medium' | 'transparent'; // Border subtle color option
 }

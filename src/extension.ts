@@ -166,6 +166,7 @@ const getThemeConfig = (): ThemeConfig => {
     boldKeywords: config.get<boolean>('boldKeywords'),
     neutralScale: config.get<'slate' | 'gray' | 'zinc' | 'neutral' | 'stone'>('neutralScale'),
     primaryScale: config.get<string>('primaryScale'),
+    borderSubtleColor: config.get<'light' | 'medium' | 'transparent'>('borderSubtleColor'),
   };
 };
 
