@@ -66,17 +66,40 @@ You can customize the theme through the following settings in VS Code:
 
 ## Installation
 
-### via VS Code
+### Method 1: Extension View (Recommended)
 
-1. Open VS Code.
-2. Press `Ctrl+P` (or `Cmd+P` on Mac).
-3. Type `ext install startupintell.ini-theme`.
-4. Select **ini Dark** or **ini Light** from the theme picker.
+1. Open VS Code / Cursor / Antigravity
+2. Click the **Extensions** icon in the sidebar (or press `Ctrl+Shift+X` / `Cmd+Shift+X`)
+3. Search for `ini theme` or `startupintell.ini-theme`
+4. Click **Install**
+5. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
+6. Type `Preferences: Color Theme` and select **ini Dark** or **ini Light**
 
-### via Marketplace
+### Method 2: Command Palette
 
-- [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=startupintell.ini-theme)
-- [Open VSX Registry](https://open-vsx.org/extension/startupintell/ini-theme)
+1. Open VS Code / Cursor / Antigravity
+2. Press `Ctrl+P` (or `Cmd+P` on Mac)
+3. Type `ext install startupintell.ini-theme`
+4. Press Enter to install
+5. Select **ini Dark** or **ini Light** from the theme picker
+
+### Method 3: Direct Links
+
+- **VS Code / Cursor**: [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=startupintell.ini-theme)
+- **Antigravity / Windsurf / Codium**: [Open VSX Registry](https://open-vsx.org/extension/startupintell/ini-theme)
+
+### Method 4: Command Line
+
+**VS Code / Cursor:**
+```bash
+code --install-extension startupintell.ini-theme
+```
+
+**Open VSX compatible editors:**
+```bash
+# Download and install manually from Open VSX
+# Or use the editor's built-in extension manager
+```
 
 ## Development
 
