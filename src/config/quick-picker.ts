@@ -1,22 +1,23 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Quick Picker (命令面板 / Quick Open - Cmd+P)
+// Quick Picker (Command Palette / Quick Open - Cmd+P)
 // -----------------------------------------------------------------
 export const quickPickerConfig = (palette: ThemePalette) => {
   return {
-    // --- Container (容器) ---
-    // 背景：使用 Element 层级，把它从编辑器背景中"托"起来
+    // --- Container ---
+    // Background: Use Element level to lift it from the editor background
     'quickInput.background': palette.text.inverse,
 
-    // 文字：正常
+    // Text: Normal
     'quickInput.foreground': palette.text.normal,
 
-    // 标题栏背景 (通常只有在多步输入时才明显)
+    // Title bar background (usually only visible during multi-step inputs)
     'quickInputTitle.background': palette.bg.element,
 
-    // --- List Focus (选中项) ---
-    // 策略：使用实心主色。在快速浏览列表时，蓝色条是最清晰的光标。
+    // --- List Focus (Selected item) ---
+    // Strategy: Use a solid primary color or a clear element highlight.
+    // A blue or distinct bar is the clearest cursor when quickly browsing the list.
     'quickInputList.focusBackground': palette.bg.element,
     'quickInputList.focusForeground': palette.text.normal,
     'quickInputList.focusIconForeground': palette.text.normal,

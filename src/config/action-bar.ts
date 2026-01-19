@@ -1,13 +1,13 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Action Bar (视图标题栏的小工具条)
+// Action Bar (Small toolbar in view title bars)
 // -----------------------------------------------------------------
 export const actionBarConfig = (palette: ThemePalette) => {
   return {
-    // --- Toggled Background (激活状态的按钮背景) ---
-    // 场景：搜索框里的 "Aa"(大小写敏感)、".*"(正则) 按钮被按下时
-    // 策略：使用 Active 背景，模拟"按钮被按下"的凹陷感或高亮感
-    'actionBar.toggledBackground': palette.bg.active, // 或者 palette.primary.surface
+    // --- Toggled Background (Toggle button background when active) ---
+    // Scenario: When buttons like "Aa" (Case sensitive) or ".*" (Regex) in the search box are pressed
+    // Strategy: Use Active background to simulate a "button pressed" look or highlight
+    'actionBar.toggledBackground': palette.bg.active, // Or palette.primary.surface
   };
 };

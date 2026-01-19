@@ -1,71 +1,71 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// List & Tree Control (文件树、搜索列表、快速打开)
+// List & Tree Control (File tree, search results, quick open)
 // -----------------------------------------------------------------
 export const listTreeConfig = (palette: ThemePalette) => {
   return {
-    // --- Active Selection (当前聚焦且选中的项) ---
-    // 背景：使用主色。这是用户当前正在处理的文件/项。
+    // --- Active Selection (Items currently focused and selected) ---
+    // Background: Use primary color. This is the item the user is currently working with.
     'list.activeSelectionBackground': palette.primary.main + '10',
-    // 文字：使用反色 (如蓝底白字，或白底黑字)
+    // Text: Use a color that contrasts well with the background
     'list.activeSelectionForeground': palette.text.normal,
-    // 图标：也强制变为反色，保证对比度
+    // Icon: Also ensure icons have good contrast
     'list.activeSelectionIconForeground': palette.text.normal,
 
-    // --- Inactive Selection (选中但失焦) ---
-    // 场景：你点击了文件，然后光标移回了编辑器。此时侧边栏的文件依然是“选中”的，但变成了灰色。
-    'list.inactiveSelectionBackground': palette.bg.app, // 或者 palette.secondary.main
+    // --- Inactive Selection (Selected but not focused) ---
+    // Scenario: You click a file, then click back into the editor. The side bar file remains "selected" but turns gray.
+    'list.inactiveSelectionBackground': palette.bg.app, // Or palette.secondary.main
     'list.inactiveSelectionForeground': palette.text.normal,
     'list.inactiveSelectionIconForeground': palette.text.muted,
 
-    // --- Hover (悬停) ---
-    // 鼠标滑过时的反馈
+    // --- Hover ---
+    // Visual feedback when moving the mouse over items
     'list.hoverBackground': palette.primary.main + '10',
     'list.hoverForeground': palette.text.normal,
 
-    // --- Focus (键盘移动焦点但不选中) ---
-    // 场景：在列表中按上下键移动，但还没按 Enter。
-    'list.focusBackground': palette.bg.element, // 通常与 Hover 一致
+    // --- Focus (Keyboard movement without selection) ---
+    // Scenario: Navigating the list with arrow keys before pressing Enter.
+    'list.focusBackground': palette.bg.element, // Usually consistent with Hover
     'list.focusForeground': palette.text.normal,
-    // 聚焦时的边框：现代风格通常设为透明，或者使用极细的 Primary 边框
+    // Focus outline: Modern style usually keeps this transparent or uses a very thin Primary border
     'list.focusOutline': palette.transparent,
-    // 如果同时选中且聚焦，通常去掉边框，依靠背景色区分
+    // When both selected and focused, usually remove the outline and rely on background color
     'list.focusAndSelectionOutline': palette.transparent,
 
-    // --- Drag and Drop (拖拽) ---
-    // 拖拽文件时的背景高亮
+    // --- Drag and Drop ---
+    // Background highlight when dragging files
     'list.dropBackground': palette.primary.surface,
-    // 拖拽插入位置的线条颜色
+    // Line color indicating insertion point during drag
     'list.dropBetweenBackground': palette.primary.main,
 
-    // --- Search Highlights (搜索匹配文字) ---
-    // 普通匹配文字：使用主色文字
+    // --- Search Highlights (Matching text within the list) ---
+    // Regular matching text: Use primary text color
     'list.highlightForeground': palette.primary.text,
-    // 选中项中的匹配文字
+    // Matching text in focused items
     'list.focusHighlightForeground': palette.primary.text,
     'list.activeSelectionHighlightForeground': palette.primary.text,
 
-    // --- List Filter Widget (列表内直接打字搜索出现的弹窗) ---
+    // --- List Filter Widget (Popup when typing inside a list to filter) ---
     'listFilterWidget.background': palette.bg.element,
     'listFilterWidget.outline': palette.border.focus,
     'listFilterWidget.noMatchesOutline': palette.state.error,
     'listFilterWidget.shadow': palette.shadow.main,
 
-    // --- Tree Guides (树状结构缩进线) ---
-    // 默认缩进线：极淡
+    // --- Tree Guides (Indentation lines) ---
+    // Default indentation lines: Very subtle
     'tree.indentGuidesStroke': palette.border.subtle,
-    // 悬停/非激活时的缩进线
-    'tree.inactiveIndentGuidesStroke': palette.border.subtle, // 或者 transparent
+    // Indentation lines when hovering/inactive
+    'tree.inactiveIndentGuidesStroke': palette.border.subtle, // Or transparent
 
-    // --- Errors & Warnings (文件名变红/变黄) ---
+    // --- Errors & Warnings (File names turning red/yellow) ---
     'list.errorForeground': palette.state.error,
     'list.warningForeground': palette.state.warning,
-    // 无效项 (如未解析的路径)
+    // Invalid items (e.g., unresolved paths)
     'list.invalidItemForeground': palette.text.muted,
 
-    // --- Table (表格视图 - 较少用) ---
-    // 奇数行背景 (斑马纹)：通常设为透明保持干净，需要时设为极淡灰色
+    // --- Table (Table views - less common) ---
+    // Odd row background (Zebra striping): Usually transparent for a clean look
     'tree.tableOddRowsBackground': palette.transparent,
   };
 };

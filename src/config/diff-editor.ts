@@ -1,57 +1,57 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Diff Editor (差异对比编辑器)
+// Diff Editor
 // -----------------------------------------------------------------
 export const diffEditorConfig = (palette: ThemePalette) => {
   return {
-    // --- Inserted Text (新增内容 - 绿色) ---
-    // 单词级别的改动：透明度稍高，强调"具体改了什么"
+    // --- Inserted Text (Green) ---
+    // Word-level changes: Slightly higher opacity to emphasize "what exactly changed"
     'diffEditor.insertedTextBackground': palette.state.success + '30', // 20%~30% opacity
-    'diffEditor.insertedTextBorder': palette.transparent, // 现代风格去边框
+    'diffEditor.insertedTextBorder': palette.transparent, // Modern style without borders
 
-    // 整行级别的改动：透明度极低，作为背景板
+    // Line-level changes: Very low opacity, serves as a background plate
     'diffEditor.insertedLineBackground': palette.state.success + '15', // 10%~15% opacity
-    // Gutter (行号区域) 的背景
-    'diffEditorGutter.insertedLineBackground': palette.transparent, // 或者 palette.state.success + '10'
+    // Gutter background for inserted lines
+    'diffEditorGutter.insertedLineBackground': palette.transparent, // Or palette.state.success + '10'
 
-    // --- Removed Text (删除内容 - 红色) ---
-    // 单词级别
+    // --- Removed Text (Red) ---
+    // Word-level changes
     'diffEditor.removedTextBackground': palette.state.error + '30',
     'diffEditor.removedTextBorder': palette.transparent,
 
-    // 整行级别
+    // Line-level changes
     'diffEditor.removedLineBackground': palette.state.error + '15',
     'diffEditorGutter.removedLineBackground': palette.transparent,
 
-    // --- Layout & Structure (布局结构) ---
-    // 两个编辑器中间的分割线
+    // --- Layout & Structure ---
+    // Divider line between the two editors
     'diffEditor.border': palette.border.subtle,
 
-    // 对角线填充：当一边文件比另一边长时，空出来的区域
-    'diffEditor.diagonalFill': palette.bg.element + '50', // 半透明条纹
+    // Diagonal fill: Pattern for regions where one file is longer than the other
+    'diffEditor.diagonalFill': palette.bg.element + '50', // Semi-transparent stripes
 
-    // --- Overview Ruler (右侧滚动条上的指示点) ---
-    // 必须是不透明的颜色，否则在滚动条上看不清
+    // --- Overview Ruler (Indicators on the vertical scrollbar) ---
+    // Must be opaque colors to be visible on the scrollbar
     'diffEditorOverview.insertedForeground': palette.state.success,
     'diffEditorOverview.removedForeground': palette.state.error,
 
-    // --- Unchanged Regions (折叠的未变动代码块) ---
-    // VS Code 新功能：可以折叠未修改的代码
-    'diffEditor.unchangedRegionBackground': palette.bg.app, // 看起来像"凹"进去的区域
+    // --- Unchanged Regions (Folded unmodified code blocks) ---
+    // VS Code feature that collapses unmodified code
+    'diffEditor.unchangedRegionBackground': palette.bg.app, // Area that looks "recessed"
     'diffEditor.unchangedRegionForeground': palette.text.muted,
-    'diffEditor.unchangedCodeBackground': palette.bg.element + '40', // 未变动代码的背景（少用）
-    'diffEditor.unchangedRegionShadow': palette.shadow.main, // 折叠块的阴影
+    'diffEditor.unchangedCodeBackground': palette.bg.element + '40', // Background for unmodified code (rarely used)
+    'diffEditor.unchangedRegionShadow': palette.shadow.main, // Shadow for folded regions
 
-    // --- Moved Text (代码移动/重构检测) ---
-    // 场景：你把一个函数从第10行移到了第100行
-    'diffEditor.move.border': palette.text.muted + '50', // 弱提示
-    'diffEditor.moveActive.border': palette.primary.main, // 强提示 (当前选中的移动块)
+    // --- Moved Text (Detection of code moves/refactoring) ---
+    // Scenario: Moving a function from line 10 to line 100
+    'diffEditor.move.border': palette.text.muted + '50', // Subtle indicator
+    'diffEditor.moveActive.border': palette.primary.main, // Strong indicator (currently selected move block)
 
-    // --- Multi-file Diff Editor (多文件 Diff 视图) ---
-    // 场景：在一个 Tab 里查看所有 Git 变更
-    'multiDiffEditor.background': palette.bg.app, // 容器背景
-    'multiDiffEditor.headerBackground': palette.bg.panel, // 文件名标题头
-    'multiDiffEditor.border': palette.border.subtle, // 文件之间的分割线
+    // --- Multi-file Diff Editor ---
+    // Scenario: Viewing all Git changes within a single Tab
+    'multiDiffEditor.background': palette.bg.app, // Container background
+    'multiDiffEditor.headerBackground': palette.bg.panel, // File name header
+    'multiDiffEditor.border': palette.border.subtle, // Divider between files
   };
 };

@@ -1,28 +1,28 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Breadcrumbs (编辑器顶部的路径导航)
+// Breadcrumbs (File path navigation at the top of the editor)
 // -----------------------------------------------------------------
 export const breadcrumbsConfig = (palette: ThemePalette) => {
   return {
-    // --- Bar (导航条本身) ---
-    // 背景：通常设为编辑器背景色，或者透明，以保持界面整洁
+    // --- Bar (The breadcrumb bar itself) ---
+    // Background: Usually set to the editor background or transparent to maintain a clean interface
     'breadcrumb.background': palette.bg.panel,
 
-    // 文字：默认必须低调 (Muted)
-    // 这样它不会抢夺下方代码的视觉重点
+    // Text: Must be subtle (Muted) by default
+    // This ensures it doesn't distract from the code below
     'breadcrumb.foreground': palette.text.muted,
 
-    // --- Interaction (交互状态) ---
-    // 聚焦 (Focus): 键盘导航选中时
+    // --- Interaction ---
+    // Focus: When selected during keyboard navigation
     'breadcrumb.focusForeground': palette.text.normal,
 
-    // 选中 (Active): 鼠标点击或下拉菜单打开时
-    // 策略：高亮显示，确认当前操作路径
-    'breadcrumb.activeSelectionForeground': palette.primary.main, // 或者 text.normal
+    // Active Selection: When clicked or when the dropdown menu is open
+    // Strategy: Highlight to confirm the current operation path
+    'breadcrumb.activeSelectionForeground': palette.primary.main, // Or palette.text.normal
 
-    // --- Picker (点击后弹出的下拉菜单) ---
-    // 背景：使用 Element 层级，悬浮在代码之上
+    // --- Picker (Dropdown menu that appears when clicked) ---
+    // Background: Use Element level, floating above the code
     'breadcrumbPicker.background': palette.bg.element,
   };
 };

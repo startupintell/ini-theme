@@ -1,31 +1,31 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Action Colors (工具栏与操作列表)
+// Action Colors (Toolbar and Action Lists)
 // -----------------------------------------------------------------
 export const actionColorsConfig = (palette: ThemePalette) => {
   return {
-    // --- Toolbar (工具栏图标交互) ---
-    // 悬停背景：使用 Element 层级 (neutral[800])，提供轻微的方形背景反馈
+    // --- Toolbar (Interaction with toolbar icons) ---
+    // Hover background: Provide subtle feedback on hover
     'toolbar.hoverBackground': palette.transparent,
 
-    // 悬停轮廓：现代扁平化设计通常设为透明，避免出现难看的边框
+    // Hover outline: Modern flat design usually keeps this transparent to avoid unsightly borders
     'toolbar.hoverOutline': palette.transparent,
 
-    // 按下背景：使用 Active 层级，比悬停更深/更明显
+    // Active background: Use Active level, deeper/more noticeable than hover
     'toolbar.activeBackground': palette.bg.active,
 
-    // --- Editor Action List (快速修复/灯泡菜单) ---
-    // 背景：作为一个弹出层(Widget)，使用 Element 背景
+    // --- Editor Action List (Quick Fix/Lightbulb menu) ---
+    // Background: As a popup (Widget), use Element background
     'editorActionList.background': palette.bg.element,
 
-    // 列表文字
+    // List text
     'editorActionList.foreground': palette.text.normal,
 
-    // 聚焦项背景：使用主色高亮，类似于下拉菜单的选中态
+    // Focused item background: Highlight with primary color, similar to dropdown selection state
     'editorActionList.focusBackground': palette.primary.main,
 
-    // 聚焦项文字：使用反色 (如蓝底白字)
+    // Focused item text: Use inverse color (e.g., white text on blue background)
     'editorActionList.focusForeground': palette.text.inverse,
   };
 };

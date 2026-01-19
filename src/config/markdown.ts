@@ -1,25 +1,25 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Markdown Alerts (Markdown 预览里的提示块 > [!NOTE])
+// Markdown Alerts (Alert blocks in Markdown preview > [!NOTE])
 // -----------------------------------------------------------------
 export const markdownConfig = (palette: ThemePalette) => {
   return {
-    // Note: 蓝色 (通用信息)
+    // Note: Blue (General information)
     'markdownAlert.note.foreground': palette.state.info,
-    // 或者 palette.primary.main
+    // Or palette.primary.main
 
-    // Tip: 绿色 (帮助/技巧)
+    // Tip: Green (Help/Tips)
     'markdownAlert.tip.foreground': palette.state.success,
 
-    // Important: 紫色 (强调)
-    // 如果你的主题没有紫色，可以用主色或更深的蓝色
+    // Important: Purple (Emphasis)
+    // If your theme doesn't have a purple, use the primary color or a deeper blue
     'markdownAlert.important.foreground': palette.secondary.main || '#a855f7',
 
-    // Warning: 黄色 (警告)
+    // Warning: Yellow (Warning)
     'markdownAlert.warning.foreground': palette.state.warning,
 
-    // Caution: 红色 (危险/负面)
+    // Caution: Red (Danger/Negative)
     'markdownAlert.caution.foreground': palette.state.error,
   };
 };

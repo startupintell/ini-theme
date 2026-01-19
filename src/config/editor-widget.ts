@@ -1,81 +1,81 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Editor Widget (悬浮窗 - 查找/提示/粘性滚动)
+// Editor Widget (Floating windows - Find/IntelliSense/Sticky Scroll)
 // -----------------------------------------------------------------
 export const editorWidgetConfig = (palette: ThemePalette) => {
   return {
-    // --- General Widget (通用挂件 - 如查找替换框) ---
-    // 背景：使用 Element 层级，产生"悬浮卡片"的效果
+    // --- General Widget (Generic widgets like Find/Replace box) ---
+    // Background: Use Element level for a "floating card" effect
     'editorWidget.background': palette.bg.element,
-    // 边框：细边框
+    // Border: Subtle border
     'editorWidget.border': palette.border.muted,
-    // 文字：正常
+    // Text: Normal
     'editorWidget.foreground': palette.text.normal,
-    // 大小调整条的边框 (查找框下方的分割线)
+    // Border of the resize bar (divider below the find box)
     'editorWidget.resizeBorder': palette.primary.main,
 
-    // --- Suggest Widget (智能提示/补全列表) ---
-    // 背景：悬浮层
+    // --- Suggest Widget (IntelliSense/Completion list) ---
+    // Background: Floating layer
     'editorSuggestWidget.background': palette.bg.app,
     'editorSuggestWidget.border': palette.border.subtle,
     'editorSuggestWidget.foreground': palette.text.normal,
 
-    // 选中项 (Selected Item)
-    // 策略：使用主色高亮，这是最清晰的交互反馈
+    // Selected Item
+    // Strategy: Highlight with the primary color for the clearest feedback
     'editorSuggestWidget.selectedBackground': palette.primary.main,
-    'editorSuggestWidget.selectedForeground': palette.text.inverse, // 反色文字
-    'editorSuggestWidget.selectedIconForeground': palette.text.inverse, // 反色图标
+    'editorSuggestWidget.selectedForeground': palette.text.inverse, // Inverse text
+    'editorSuggestWidget.selectedIconForeground': palette.text.inverse, // Inverse icon
 
-    // 匹配文字高亮 (Match Highlights)
-    // 未选中时：使用主色文字
+    // Match Highlights
+    // When not selected: Use primary color text
     'editorSuggestWidget.highlightForeground': palette.primary.main,
-    // 选中时：因为背景变蓝了，高亮文字需要变白(反色)
+    // When selected: Since the background is blue, highlight text needs to be white/inverse
     'editorSuggestWidget.focusHighlightForeground': palette.text.inverse,
 
-    // 状态栏 (提示框底部的 "Read more..." 等小字)
+    // Status bar (small text like "Read more..." at the bottom of the widget)
     'editorSuggestWidgetStatus.foreground': palette.text.muted,
 
-    // --- Hover Widget (鼠标悬停提示) ---
-    // 类似于 Tooltip
+    // --- Hover Widget (Mouse hover tips) ---
+    // Similar to a Tooltip
     'editorHoverWidget.background': palette.text.inverse,
     'editorHoverWidget.border': palette.border.subtle,
     'editorHoverWidget.foreground': palette.text.normal,
-    // 状态栏 (Hover 底部有时会有操作栏)
+    // Status bar (Hover sometimes has an action bar at the bottom)
     'editorHoverWidget.statusBarBackground': palette.text.inverse,
-    // 参数提示中的高亮参数
+    // Highlighted parameter in parameter hints
     'editorHoverWidget.highlightForeground': palette.primary.main,
 
-    // --- Sticky Scroll (粘性滚动) ---
-    // 策略：无缝融合 (Seamless)。
-    // 让吸附在顶部的代码行看起来依然属于编辑器的一部分，而不是一个独立的 Header。
-    'editorStickyScroll.background': palette.bg.panel, // 与编辑器背景一致
-    'editorStickyScroll.border': palette.transparent, // 去掉下划线，或者用 muted 极细线
-    'editorStickyScroll.shadow': palette.shadow.scroll, // 滚动时的阴影
-    // 悬停时稍微变色，提示这是可点击跳转的
+    // --- Sticky Scroll ---
+    // Strategy: Seamless integration.
+    // Make the lines pinned to the top look like part of the editor, not a separate header.
+    'editorStickyScroll.background': palette.bg.panel, // Same as editor background
+    'editorStickyScroll.border': palette.transparent, // Remove underline, or use muted thin line
+    'editorStickyScroll.shadow': palette.shadow.scroll, // Shadow when scrolling
+    // Hover effect to indicate it's clickable/jumpable
     'editorStickyScrollHover.background': palette.bg.element,
-    // Gutter (行号区域) 也要无缝
+    // Gutter (line number area) should also be seamless
     'editorStickyScrollGutter.background': palette.bg.panel,
 
-    // --- Ghost Text (AI/Copilot 幽灵文字) ---
-    // 必须非常低调
+    // --- Ghost Text (AI/Copilot ghost text) ---
+    // Must be very low-key
     'editorGhostText.foreground': palette.text.subtle,
     'editorGhostText.background': palette.transparent,
     'editorGhostText.border': palette.transparent,
 
-    // --- Debug Exception Widget (异常中断弹窗) ---
-    // 当代码报错暂停时出现的窗口
+    // --- Debug Exception Widget ---
+    // The window that appears when code execution pauses due to an exception
     'debugExceptionWidget.background': palette.bg.element,
-    'debugExceptionWidget.border': palette.state.error, // 红色边框强调错误
+    'debugExceptionWidget.border': palette.state.error, // Highlight error with red border
 
-    // --- Marker Navigation (跳转错误时的导航条) ---
-    // 按 F8 跳转错误时显示的小条
+    // --- Marker Navigation (Navigation bar when jumping between errors) ---
+    // Small bar shown when using F8 to jump through errors
     'editorMarkerNavigation.background': palette.bg.element,
-    // 错误/警告的色块
+    // Color blocks for error/warning
     'editorMarkerNavigationError.background': palette.state.error,
     'editorMarkerNavigationWarning.background': palette.state.warning,
     'editorMarkerNavigationInfo.background': palette.primary.main,
-    // 标题头背景 (可以稍微深一点/亮一点)
+    // Header background (can be slightly darker/lighter)
     'editorMarkerNavigationError.headerBackground': palette.state.error + '20',
     'editorMarkerNavigationWarning.headerBackground': palette.state.warning + '20',
     'editorMarkerNavigationInfo.headerBackground': palette.primary.main + '20',

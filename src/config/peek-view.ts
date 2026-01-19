@@ -1,51 +1,51 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Peek View (快速查看引用/定义)
+// Peek View (Quick view for references/definitions)
 // -----------------------------------------------------------------
 export const peekViewConfig = (palette: ThemePalette) => {
   return {
-    // --- Container & Border (整体容器) ---
-    // 边框：这是 Peek View 最重要的视觉特征。
-    // 使用主色，让整个窗口像被主色"包裹"住一样，非常醒目。
+    // --- Container & Border ---
+    // Border: The most important visual feature of the Peek View.
+    // Use the primary color to "wrap" the entire window, making it highly prominent.
     'peekView.border': palette.primary.main,
 
-    // --- Title Area (顶部标题) ---
-    // 背景：通常与 Result 列表背景一致
+    // --- Title Area ---
+    // Background: Usually consistent with the results list background
     'peekViewTitle.background': palette.bg.element,
-    // 标题文字 (文件名)
+    // Title text (file name)
     'peekViewTitleLabel.foreground': palette.text.normal,
-    // 描述文字 (路径)
+    // Description text (file path)
     'peekViewTitleDescription.foreground': palette.text.subtle,
 
-    // --- Result List (左侧：引用列表) ---
-    // 背景：使用 Element 层级
+    // --- Result List (Left side: list of references) ---
+    // Background: Use Element level
     'peekViewResult.background': palette.bg.element,
-    // 文件名
+    // File name
     'peekViewResult.fileForeground': palette.text.normal,
-    // 代码行号/预览文字
+    // Line number / preview text
     'peekViewResult.lineForeground': palette.text.muted,
 
-    // 选中项：主色高亮，强调当前选中的是哪一个引用
-    'peekViewResult.selectionBackground': palette.primary.main, // 或者 palette.secondary.main
+    // Selected item: Highlight with primary color to clearly show which reference is selected
+    'peekViewResult.selectionBackground': palette.primary.main, // Or palette.secondary.main
     'peekViewResult.selectionForeground': palette.text.inverse,
 
-    // 搜索匹配高亮 (在列表中)
+    // Search match highlights (within the list)
     'peekViewResult.matchHighlightBackground': palette.state.warning + '40',
 
-    // --- Editor Area (右侧：代码预览) ---
-    // 背景：建议使用比主编辑器更深一点的颜色 (bg.input)，制造"暗房"效果
-    // 这样用户的注意力会自然集中在这个小窗口里的代码上
+    // --- Editor Area (Right side: code preview) ---
+    // Background: Suggest using a color slightly darker than the main editor (bg.input) for a "darkroom" effect.
+    // This helps focus the user's attention on the code within the sub-window.
     'peekViewEditor.background': palette.bg.input,
-    'peekViewEditorGutter.background': palette.bg.input, // 必须与编辑器背景一致
+    'peekViewEditorGutter.background': palette.bg.input, // Must match the editor background
 
-    // 匹配高亮 (代码中)
-    // 这是你查找的那个变量/函数名
-    'peekViewEditor.matchHighlightBackground': palette.primary.surface, // 或 primary.main + '40'
+    // Match highlights (within the code preview)
+    // For the specific variable/function being inspected
+    'peekViewEditor.matchHighlightBackground': palette.primary.surface, // Or primary.main + '40'
     'peekViewEditor.matchHighlightBorder': palette.transparent,
 
-    // --- Sticky Scroll (Peek View 内的粘性滚动) ---
-    // 保持与 Peek Editor 背景一致
+    // --- Sticky Scroll (within Peek View) ---
+    // Consitent with Peek Editor background
     'peekViewEditorStickyScroll.background': palette.bg.input,
     'peekViewEditorStickyScrollGutter.background': palette.bg.input,
   };

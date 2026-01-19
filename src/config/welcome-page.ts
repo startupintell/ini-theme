@@ -1,36 +1,36 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Welcome Page (欢迎页 / Get Started)
+// Welcome Page (Welcome / Get Started)
 // -----------------------------------------------------------------
 export const welcomePageConfig = (palette: ThemePalette) => {
   return {
-    // --- Background (整体背景) ---
-    // 策略：与 Editor 背景一致，提供沉浸感。
-    // 如果想要"画框"感，也可以用 bg.app。
+    // --- Background ---
+    // Strategy: Consistent with Editor background for an immersive feel.
+    // Or use bg.app for a "framed" effect.
     'welcomePage.background': palette.bg.panel,
 
-    // --- Tiles (操作卡片：New File, Open Folder...) ---
-    // 背景：使用 Element 层级，看起来像一张张卡片
+    // --- Tiles (Action cards like New File, Open Folder...) ---
+    // Background: Use Element level to make them look like cards
     'welcomePage.tileBackground': palette.bg.element,
-    // 悬停：变亮/交互反馈
+    // Hover: Lighten or provide interaction feedback
     'welcomePage.tileHoverBackground': palette.bg.active,
-    // 边框：细微轮廓
+    // Border: Subtle outline
     'welcomePage.tileBorder': palette.border.muted,
 
-    // --- Progress Bars (Walkthrough 进度条) ---
-    // 进度条的前景 (已完成部分)：主色
+    // --- Progress Bars (Walkthrough progress bars) ---
+    // Progress bar foreground (completed part): Primary color
     'welcomePage.progress.foreground': palette.primary.main,
-    // 进度条的背景 (未完成轨道)：深灰
+    // Progress bar background (uncompleted track): Dark gray
     'welcomePage.progress.background': palette.bg.active,
 
-    // --- Walkthrough Elements (引导页元素) ---
-    // 步骤标题
+    // --- Walkthrough Elements ---
+    // Step title
     'walkthrough.stepTitle.foreground': palette.text.normal,
 
-    // 嵌入式编辑器背景
-    // 场景：在引导里演示"如何修改设置"时，会嵌一个小编辑器
-    // 策略：使用 bg.input (深坑)，让它看起来像是一个"代码块"
+    // Embedded editor background
+    // Scenario: Small editors embedded in walkthroughs to demonstrate features
+    // Strategy: Use bg.input (sunken look) to make it resemble a "code block"
     'walkThrough.embeddedEditorBackground': palette.bg.input,
   };
 };

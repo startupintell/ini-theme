@@ -1,9 +1,9 @@
 import { ThemePalette, ThemeConfig } from '../type';
 
 export const syntaxConfig = (palette: ThemePalette, config: ThemeConfig = {}) => {
-  const s = palette.syntax; // 简写
+  const s = palette.syntax; // Shortened reference
 
-  // 生成字体样式字符串
+  // Generate font style strings
   const getFontStyle = (italic?: boolean, bold?: boolean) => {
     const styles = [];
     if (italic) styles.push('italic');
@@ -16,7 +16,7 @@ export const syntaxConfig = (palette: ThemePalette, config: ThemeConfig = {}) =>
 
   return {
     // =========================================================================
-    // 1. Semantic Token Colors (现代语义高亮 - 优先级最高)
+    // 1. Semantic Token Colors (Modern semantic highlighting - highest priority)
     // =========================================================================
     semanticTokenColors: {
       namespace: s.class,
@@ -32,7 +32,7 @@ export const syntaxConfig = (palette: ThemePalette, config: ThemeConfig = {}) =>
       macro: s.function,
 
       variable: s.variable,
-      'variable.readonly': s.constant, // const 变量
+      'variable.readonly': s.constant, // const variables
       property: s.property,
       'property.readonly': s.constant,
 
@@ -44,40 +44,40 @@ export const syntaxConfig = (palette: ThemePalette, config: ThemeConfig = {}) =>
       operator: s.operator,
       keyword: { foreground: s.keyword, fontStyle: keywordStyle },
 
-      // 特殊修复
+      // Special fixes
       comment: { foreground: s.comment, fontStyle: commentStyle },
-      '*.defaultLibrary': s.class, // Math, Console 等内置库
+      '*.defaultLibrary': s.class, // Math, Console, and other built-in libraries
     },
 
     // =========================================================================
-    // 2. TextMate Token Colors (传统正则高亮 - 兜底兼容)
+    // 2. TextMate Token Colors (Legacy regex-based highlighting - fallback)
     // =========================================================================
     tokenColors: [
-      // --- Comments (注释) ---
+      // --- Comments ---
       {
         scope: ['comment', 'punctuation.definition.comment'],
         settings: { foreground: s.comment, fontStyle: commentStyle },
       },
 
-      // --- Keywords (关键字: import, export, return, if) ---
+      // --- Keywords (e.g., import, export, return, if) ---
       {
         scope: ['keyword', 'storage.type', 'storage.modifier'],
         settings: { foreground: s.keyword, fontStyle: keywordStyle },
       },
 
-      // 特殊处理: Operator (=>, =, +) 有时被视为 keyword，但我们要分开
+      // Special handling: Operators (=>, =, +) are sometimes treated as keywords, but we separate them
       {
         scope: ['keyword.operator'],
-        settings: { foreground: s.operator, fontStyle: '' }, // 运算符通常不倾斜/加粗
+        settings: { foreground: s.operator, fontStyle: '' }, // Operators usually aren't italicized/bolded
       },
 
-      // --- Functions (函数定义与调用) ---
+      // --- Functions (Definitions and calls) ---
       {
         scope: ['entity.name.function', 'support.function'],
         settings: { foreground: s.function },
       },
 
-      // --- Classes / Types (类, 类型, 接口) ---
+      // --- Classes / Types (Classes, Types, Interfaces) ---
       {
         scope: [
           'entity.name.type',
@@ -89,37 +89,37 @@ export const syntaxConfig = (palette: ThemePalette, config: ThemeConfig = {}) =>
         settings: { foreground: s.class },
       },
 
-      // --- Variables (变量) ---
+      // --- Variables ---
       {
         scope: ['variable', 'meta.variable', 'variable.language'], // this, super
         settings: { foreground: s.variable },
       },
 
-      // 常量 (CONST_VAR)
+      // Constants (CONST_VAR)
       {
         scope: ['variable.other.constant'],
         settings: { foreground: s.constant },
       },
 
-      // --- Parameters (参数) ---
+      // --- Parameters ---
       {
         scope: ['variable.parameter'],
         settings: { foreground: s.parameter },
       },
 
-      // --- Object Properties (对象属性: obj.prop) ---
+      // --- Object Properties (e.g., obj.prop) ---
       {
         scope: ['variable.other.object.property', 'meta.object-literal.key'],
         settings: { foreground: s.property },
       },
 
-      // --- Strings (字符串) ---
+      // --- Strings ---
       {
         scope: ['string', 'punctuation.definition.string'],
         settings: { foreground: s.string },
       },
 
-      // --- Constants (数字, 布尔值) ---
+      // --- Constants (Numbers, Booleans) ---
       {
         scope: ['constant.numeric', 'constant.language' /* true/false */],
         settings: { foreground: s.constant },
@@ -136,7 +136,7 @@ export const syntaxConfig = (palette: ThemePalette, config: ThemeConfig = {}) =>
       },
       {
         scope: ['punctuation.definition.tag'], // <, >, />
-        settings: { foreground: s.operator }, // 或者 subtle
+        settings: { foreground: s.operator }, // Or subtle
       },
 
       // --- CSS / SCSS ---
@@ -150,7 +150,7 @@ export const syntaxConfig = (palette: ThemePalette, config: ThemeConfig = {}) =>
       },
       {
         scope: ['entity.other.attribute-name.class.css'], // .className
-        settings: { foreground: s.class }, // 或者 s.function
+        settings: { foreground: s.class }, // Or s.function
       },
       {
         scope: ['entity.other.attribute-name.id.css'], // #id

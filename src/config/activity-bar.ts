@@ -1,61 +1,61 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Activity Bar (活动栏 - 最左侧/顶部的图标导航)
+// Activity Bar (Icon navigation on the far left or top)
 // -----------------------------------------------------------------
 export const activityBarConfig = (palette: ThemePalette) => {
   return {
-    // --- Vertical Activity Bar (经典垂直布局) ---
+    // --- Vertical Activity Bar (Classic vertical layout) ---
 
-    // 背景：使用 App 层级 (最深色)，作为界面的"边框"
+    // Background: Use App level (darkest), serving as the "border" of the interface
     'activityBar.background': palette.bg.panel,
 
-    // 边框：与 Side Bar 的分割线，通常极淡
+    // Border: Divider separating from the Side Bar, usually very subtle
     'activityBar.border': palette.border.subtle,
 
-    // 图标颜色 (激活)：使用最亮的文字色
-    // 设计建议：尽量不要让图标变彩色 (Primary)，白色/高亮色最干净
+    // Icon color (Active): Use the brightest text color
+    // Design tip: Avoid making icons colorful (Primary); white/highlighted neutral is cleanest
     'activityBar.foreground': palette.text.normal,
 
-    // 图标颜色 (未激活)：使用 Muted 或 Subtle，让它们退居幕后
+    // Icon color (Inactive): Use Muted or Subtle to let them recede into the background
     'activityBar.inactiveForeground': palette.text.muted,
 
-    // 激活指示条：左侧/右侧的那条亮线
+    // Active Indicator: The bright line on the left/right
     'activityBar.activeBorder': palette.primary.main,
 
-    // 激活项背景：
-    // 1. 设为 Transparent (推荐)：现代风格，只靠 Icon 高亮和 Border 指示。
-    // 2. 设为 Element 背景：传统按钮风格。
+    // Active item background:
+    // 1. Set to Transparent (Recommended): Modern style, rely only on Icon highlight and Border indicator.
+    // 2. Set to Element background: Traditional button style.
     'activityBar.activeBackground': palette.transparent,
 
-    // 焦点边框 (键盘操作时)
+    // Focus border (during keyboard navigation)
     'activityBar.activeFocusBorder': palette.primary.main,
 
-    // 拖拽时的反馈色
+    // Feedback color when dragging items
     'activityBar.dropBorder': palette.primary.main,
 
-    // --- Top Activity Bar (顶部横向布局) ---
-    // 当你把 Activity Bar 移到 Side Bar 上方时生效
+    // --- Top Activity Bar (Horizontal layout at the top) ---
+    // Takes effect when the Activity Bar is moved above the Side Bar
 
     'activityBarTop.background': palette.bg.app,
     'activityBarTop.foreground': palette.text.normal,
     'activityBarTop.inactiveForeground': palette.text.muted,
 
-    // 顶部模式下，激活项通常是一个"Tab"，所以给一个背景色更好看
+    // In top mode, active items usually look like "Tabs", so a background color is preferred
     'activityBarTop.activeBackground': palette.bg.element,
-    'activityBarTop.activeBorder': palette.primary.main, // 底部高亮线
+    'activityBarTop.activeBorder': palette.primary.main, // Bottom highlight line
     'activityBarTop.dropBorder': palette.primary.main,
 
-    // --- Badges (通知角标) ---
-    // 标准角标 (如：搜索结果数) -> 使用主色
+    // --- Badges (Notification badges) ---
+    // Standard badge (e.g., search result count) -> Use primary color
     'activityBarBadge.background': palette.primary.main,
     'activityBarBadge.foreground': palette.text.inverse,
 
-    // 警告角标 (如：ESLint 警告) -> 使用 Warning 色
+    // Warning badge (e.g., ESLint warnings) -> Use Warning color
     'activityWarningBadge.background': palette.state.warning,
-    'activityWarningBadge.foreground': palette.bg.app, // 警告色通常是亮色，配深色文字
+    'activityWarningBadge.foreground': palette.bg.app, // Warning colors are usually bright, pair with dark text
 
-    // 错误角标 (如：代码错误) -> 使用 Error 色
+    // Error badge (e.g., code errors) -> Use Error color
     'activityErrorBadge.background': palette.state.error,
     'activityErrorBadge.foreground': palette.text.inverse,
   };

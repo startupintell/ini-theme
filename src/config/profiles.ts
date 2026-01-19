@@ -1,19 +1,19 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Profiles (配置文件与设置齿轮角标)
+// Profiles (Profiles and Settings gear badge)
 // -----------------------------------------------------------------
 export const profilesConfig = (palette: ThemePalette) => {
   return {
-    // --- Profile Badge (齿轮图标上的角标) ---
-    // 场景：显示 "1" (有更新) 或用户头像/首字母。
-    // 颜色：与 Activity Bar 的其他角标保持一致，使用主色。
+    // --- Profile Badge (Badge on the gear icon) ---
+    // Scenario: Displays "1" (indicates updates) or user avatar/initials.
+    // Color: Consistent with other Activity Bar badges, use primary color.
     'profileBadge.background': palette.primary.main,
     'profileBadge.foreground': palette.text.inverse,
 
-    // --- Profiles Sash Border (配置文件编辑器分割线) ---
-    // 场景：当你打开 "Profiles" 管理界面时，不同列之间的拖动分割线。
-    // 颜色：使用最淡的边框色，避免干扰内容。
+    // --- Profiles Sash Border (Divider in the Profiles editor) ---
+    // Scenario: Drag-to-resize divider between columns in the "Profiles" management interface.
+    // Color: Use the subtlest border color to avoid distracting from the content.
     'profiles.sashBorder': palette.border.subtle,
   };
 };

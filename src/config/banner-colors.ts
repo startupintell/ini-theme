@@ -1,26 +1,26 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Banner (顶部通栏横幅 - 如受限模式/更新提示)
+// Banner (Top full-width banner - e.g., Restricted Mode or Update notifications)
 // -----------------------------------------------------------------
 export const bannerColorsConfig = (palette: ThemePalette) => {
   return {
-    // --- Background (背景) ---
-    // 策略：使用 Primary Surface (主色背景) 或者 Warning Surface。
-    // 这让它在深色界面中非常显眼，用户一眼就能看到顶部多了一条东西。
-    // 也可以直接用 Solid Primary (实心主色) 增加紧迫感。
-    'banner.background': palette.bg.active, // 稳妥的深色方案
-    // 或者 'banner.background': palette.primary.main, // 激进的高亮方案
+    // --- Background ---
+    // Strategy: Use Primary Surface or Warning Surface.
+    // This makes it very prominent in a dark interface, alerting the user immediately.
+    // Solid Primary can also be used to add a sense of urgency.
+    'banner.background': palette.bg.active, // Safer dark scheme
+    // Alternatively: 'banner.background': palette.primary.main, // Aggressive highlight scheme
 
-    // --- Foreground (文字) ---
+    // --- Foreground ---
     'banner.foreground': palette.text.normal,
-    // 如果背景是实心主色，这里应该用反色
+    // If using a solid primary background, the foreground should be the inverse color
     // 'banner.foreground': palette.text.inverse,
 
-    // --- Icon (图标) ---
-    // 通常是左侧的一个 Info 或 Warning 图标
+    // --- Icon ---
+    // Usually an Info or Warning icon on the left
     'banner.iconForeground': palette.primary.main,
-    // 如果背景是实心主色，图标也应该是反色
+    // If using a solid primary background, the icon should also be the inverse color
     // 'banner.iconForeground': palette.text.inverse,
   };
 };

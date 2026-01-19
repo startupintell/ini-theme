@@ -1,33 +1,33 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Command Center (标题栏中间的搜索/命令入口)
+// Command Center (Search/Command entry in the middle of the title bar)
 // -----------------------------------------------------------------
 export const commandCenterConfig = (palette: ThemePalette) => {
   return {
-    // --- Default State (默认状态) ---
-    // 背景：使用 Element 层级，看起来像一个深色的胶囊按钮
+    // --- Default State ---
+    // Background: Use Element level, looks like a dark capsule button
     'commandCenter.background': palette.bg.element,
-    // 文字：正常
+    // Text: Normal
     'commandCenter.foreground': palette.text.normal,
-    // 边框：细微轮廓
+    // Border: Subtle outline
     'commandCenter.border': palette.border.subtle,
 
-    // --- Active/Hover State (交互状态) ---
-    // 鼠标悬停或点击时：背景加深/变亮
+    // --- Active/Hover State ---
+    // On hover or click: Darken/lighten background
     'commandCenter.activeBackground': palette.bg.active,
     'commandCenter.activeForeground': palette.text.normal,
-    // 激活边框：使用主色或 Focus 边框，强调"准备输入"
+    // Active border: Use primary or Focus border, emphasizing "ready to input"
     'commandCenter.activeBorder': palette.border.focus,
 
-    // --- Inactive Window State (窗口失焦) ---
-    // 当你切换到浏览器时，让它变淡，不抢视觉
+    // --- Inactive Window State ---
+    // When switching to another application, fade it out to reduce visual noise
     'commandCenter.inactiveForeground': palette.text.muted,
-    'commandCenter.inactiveBorder': palette.border.subtle + '40', // 降低不透明度
+    'commandCenter.inactiveBorder': palette.border.subtle + '40', // Lower opacity
 
-    // --- Debugging State (调试模式) ---
-    // 背景变更为淡橙色，与底部的 Status Bar 呼应，提示"正在调试"
-    // 注意：这里不能太亮，否则会干扰标题栏的文字阅读
+    // --- Debugging State ---
+    // Background changes to light orange, echoing the Status Bar at the bottom, indicating "debugging"
+    // Note: This shouldn't be too bright to avoid interfering with title bar text legibility
     'commandCenter.debuggingBackground': palette.state.warning + '20',
   };
 };

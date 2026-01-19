@@ -1,33 +1,33 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Inline Chat (Cmd+K 悬浮对话框)
+// Inline Chat (Cmd+K Floating dialogue box)
 // -----------------------------------------------------------------
 export const inlineChatConfig = (palette: ThemePalette) => {
   return {
-    // --- Container (悬浮窗口容器) ---
-    // 背景：使用 Element 层级，把它从编辑器背景中"托"起来
+    // --- Container (Floating window container) ---
+    // Background: Use Element level to lift it from the editor background
     'inlineChat.background': palette.bg.element,
-    // 边框：细微的边框定义轮廓
+    // Border: Subtle border to define the outline
     'inlineChat.border': palette.border.muted,
-    // 阴影：必须有阴影，否则在同色系代码背景上看不清边界
-    'inlineChat.shadow': palette.shadow.strong, // 使用较重的阴影
-    // 文字：正常
+    // Shadow: Must have a shadow, otherwise it's hard to see the boundaries against the code background
+    'inlineChat.shadow': palette.shadow.strong, // Use a heavier shadow
+    // Text: Normal
     'inlineChat.foreground': palette.text.normal,
 
-    // --- Input Field (输入框) ---
-    // 背景：使用 Input 层级 (深坑)，产生凹陷感
+    // --- Input Field ---
+    // Background: Use Input level for a sunken feel
     'inlineChatInput.background': palette.bg.input,
-    // 边框：默认边框
+    // Border: Default border
     'inlineChatInput.border': palette.border.subtle,
-    // 聚焦边框：主色高亮
+    // Focus border: Highlight with primary color
     'inlineChatInput.focusBorder': palette.primary.main,
-    // 占位符
+    // Placeholder text color
     'inlineChatInput.placeholderForeground': palette.text.subtle,
 
-    // --- Inline Diff (输入框内的文本变更) ---
-    // 场景：当你编辑你刚才输入的 Prompt 时显示的差异
-    'inlineChatDiff.inserted': palette.state.success + '20', // 绿色背景
-    'inlineChatDiff.removed': palette.state.error + '20', // 红色背景
+    // --- Inline Diff (Text changes within the input box) ---
+    // Scenario: Differences shown when editing the prompt you just typed
+    'inlineChatDiff.inserted': palette.state.success + '20', // Green background
+    'inlineChatDiff.removed': palette.state.error + '20', // Red background
   };
 };

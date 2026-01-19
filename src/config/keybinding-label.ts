@@ -1,25 +1,25 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Keybinding Label (快捷键标签 - 如 Cmd+C)
+// Keybinding Label (Shortcut keys labels - e.g., Cmd+C)
 // -----------------------------------------------------------------
 export const keybindingLabelConfig = (palette: ThemePalette) => {
   return {
-    // --- Keycap Style (键帽样式) ---
+    // --- Keycap Style ---
 
-    // 背景：使用 Active 层级，看起来像一个按下去或凸起的键
-    // 如果你喜欢更干净的风格，也可以设为 transparent
+    // Background: Use Active level, looks like a pressed or raised key
+    // For a cleaner style, this can also be set to transparent
     'keybindingLabel.background': palette.transparent,
 
-    // 文字：次要信息，使用 Muted
+    // Text: Subsidiary information, use Normal but could be Muted
     'keybindingLabel.foreground': palette.text.normal,
 
-    // 边框：定义轮廓
+    // Border: Define the outline
     'keybindingLabel.border': palette.border.muted + '90',
 
-    // 底部边框 (3D 效果)：
-    // 1. Flat (扁平): 与 border 一致
-    // 2. 3D (拟物): 使用更深的颜色 (如 border.muted)
+    // Bottom border (3D effect):
+    // 1. Flat: Match the border color
+    // 2. 3D (Skeuomorphic): Use a darker color (e.g., border.muted)
     'keybindingLabel.bottomBorder': palette.border.muted,
   };
 };

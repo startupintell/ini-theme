@@ -1,53 +1,53 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Button & Controls (按钮、复选框、单选框)
+// Button & Controls (Buttons, Checkboxes, Radio Buttons)
 // -----------------------------------------------------------------
 export const buttonControlConfig = (palette: ThemePalette) => {
   return {
-    // --- Primary Button (主要按钮) ---
-    // 提交、确定等核心操作
+    // --- Primary Button ---
+    // Core actions like Submit, Confirm
     'button.background': palette.primary.main,
     'button.foreground': palette.text.inverse,
-    'button.border': palette.transparent, // 现代扁平风格通常无边框
+    'button.border': palette.transparent, // Modern flat style usually has no border
     'button.hoverBackground': palette.primary.hover,
 
-    // 分割线：用于拆分按钮（如 Git Commit 下拉箭头），使用悬停色作为自然的分割
+    // Separator: Used to split buttons (e.g., Git Commit dropdown arrow)
     'button.separator': palette.primary.hover,
 
-    // --- Secondary Button (次要按钮) ---
-    // 取消、关闭等操作，使用中性色
+    // --- Secondary Button ---
+    // Actions like Cancel, Close, using neutral colors
     'button.secondaryBackground': palette.secondary.main,
     'button.secondaryForeground': palette.secondary.text,
     'button.secondaryHoverBackground': palette.secondary.hover,
 
-    // --- Checkbox (复选框) ---
-    // 背景：使用输入框背景 (凹陷感)
+    // --- Checkbox ---
+    // Background: Use input background (sunken feel)
     'checkbox.background': palette.bg.input,
-    // 勾选图标：使用主色或文本色
+    // Check icon: Use primary color or text color
     'checkbox.foreground': palette.primary.main,
-    // 边框：组件通用边框
+    // Border: Common component border
     'checkbox.border': palette.border.muted,
 
-    // 禁用状态
+    // Disabled state
     'checkbox.disabled.background': palette.bg.active,
     'checkbox.disabled.foreground': palette.text.subtle,
 
-    // 列表选中项中的复选框 (特殊场景)
-    // 此时背景通常已经高亮，所以复选框背景需要适应
+    // Checkbox within an selected list item (special scenario)
+    // Background is already highlighted here, so the checkbox needs to adapt
     'checkbox.selectBackground': palette.bg.element,
     'checkbox.selectBorder': palette.text.normal,
 
-    // --- Radio (单选框) ---
-    // 激活状态 (选中)
-    'radio.activeBackground': palette.primary.main, // 选中变成实心主色圆
-    'radio.activeForeground': palette.text.inverse, // 内部的圆点变成反色(白)
-    'radio.activeBorder': palette.primary.main, // 边框也变主色
+    // --- Radio Button ---
+    // Active state (selected)
+    'radio.activeBackground': palette.primary.main, // Becomes a solid primary color circle
+    'radio.activeForeground': palette.text.inverse, // Dot inside becomes inverse color (white)
+    'radio.activeBorder': palette.primary.main, // Border also becomes primary color
 
-    // 未激活状态 (未选中)
-    'radio.inactiveBackground': palette.bg.input, // 像输入框一样的空心圆
-    'radio.inactiveForeground': palette.text.muted, // 内部无点，或灰色点
-    'radio.inactiveBorder': palette.border.muted, // 灰色边框
-    'radio.inactiveHoverBackground': palette.bg.element, // 悬停反馈
+    // Inactive state (unselected)
+    'radio.inactiveBackground': palette.bg.input, // Hollow circle like an input box
+    'radio.inactiveForeground': palette.text.muted, // No dot inside, or gray dot
+    'radio.inactiveBorder': palette.border.muted, // Gray border
+    'radio.inactiveHoverBackground': palette.bg.element, // Hover feedback
   };
 };

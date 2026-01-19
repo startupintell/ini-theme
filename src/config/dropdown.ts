@@ -1,23 +1,23 @@
 // -----------------------------------------------------------------
-// Dropdown Control (下拉菜单 - Terminal/Output/Debug)
+// Dropdown Control (Dropdown menus - Terminal/Output/Debug)
 
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
 export const dropdownConfig = (palette: ThemePalette) => {
   return {
-    // --- Closed State (收起状态) ---
-    // 背景：与输入框保持一致，形成“可输入/可交互”的统一视觉语言
+    // --- Closed State ---
+    // Background: Consistent with input fields to create a unified "input/interactive" visual language
     'dropdown.background': palette.bg.input,
 
-    // 边框：带透明度的淡灰色
+    // Border: Subtle gray with transparency
     'dropdown.border': palette.border.muted + '80',
 
-    // 文字：正常正文色
+    // Text: Normal body text color
     'dropdown.foreground': palette.text.normal,
 
-    // --- Open State (展开列表) ---
-    // 列表背景：改为纯白背景，保持极致扁平化
+    // --- Open State (Expanded list) ---
+    // List background: Use panel background to maintain a clean appearance
     'dropdown.listBackground': palette.bg.panel,
   };
 };

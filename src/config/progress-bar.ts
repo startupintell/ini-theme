@@ -1,12 +1,12 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Progress Bar (进度条 - 加载/长耗时操作)
+// Progress Bar (Loading / long-running operations)
 // -----------------------------------------------------------------
 export const progressBarConfig = (palette: ThemePalette) => {
   return {
-    // 颜色：使用主色 (Brand Color)
-    // 无论是蓝色主题还是黑白主题，进度条都应该使用那个最显著的"强调色"。
+    // Color: Use primary color (Brand Color)
+    // Regardless of the theme, the progress bar should use the most prominent "accent color".
     'progressBar.background': palette.primary.main,
   };
 };

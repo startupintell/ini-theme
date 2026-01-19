@@ -1,98 +1,98 @@
 import { ThemePalette } from '../type';
 
 // -----------------------------------------------------------------
-// Integrated Terminal (集成终端)
+// Integrated Terminal
 // -----------------------------------------------------------------
 export const terminalConfig = (palette: ThemePalette) => {
   return {
-    // --- Viewport (视口) ---
-    // 背景：与 Panel 保持一致，无缝衔接
+    // --- Viewport ---
+    // Background: Consistent with Panel for a seamless look
     'terminal.background': palette.bg.panel,
-    // 文字：默认前景
+    // Text: Default foreground
     'terminal.foreground': palette.text.normal,
-    // 边框：分屏时的分割线
+    // Border: Divider for split terminals
     'terminal.border': palette.border.subtle,
 
-    // --- Cursor & Selection (光标与选区) ---
-    // 保持与编辑器一致
+    // --- Cursor & Selection ---
+    // Keep consistent with the editor
     'terminalCursor.foreground': palette.primary.main,
     'terminalCursor.background': palette.text.inverse,
     'terminal.selectionBackground': palette.primary.surface,
-    'terminal.inactiveSelectionBackground': palette.bg.element, // 或 primary.surface + '80'
-    'terminal.selectionForeground': null, // null 表示保留文字原色，只改背景
+    'terminal.inactiveSelectionBackground': palette.bg.element, // Or primary.surface + '80'
+    'terminal.selectionForeground': null, // null means retain the original text color, only change the background
 
-    // --- ANSI Colors (核心 16 色) ---
-    // 策略：直接映射到主题的 Palette，确保一致性
+    // --- ANSI Colors (Core 16 colors) ---
+    // Strategy: Directly map to the theme palette for consistency
 
-    // Blacks (通常用于背景或极暗的文字)
-    'terminal.ansiBlack': palette.bg.element, // 稍微亮一点的黑
-    'terminal.ansiBrightBlack': palette.text.subtle, // 灰色 (用于注释/非重要信息)
+    // Blacks (usually used for background or very dark text)
+    'terminal.ansiBlack': palette.bg.element, // Slightly lighter black
+    'terminal.ansiBrightBlack': palette.text.subtle, // Gray (for comments/non-essential info)
 
-    // Reds (错误/删除)
+    // Reds (Error/Delete)
     'terminal.ansiRed': palette.state.error,
-    'terminal.ansiBrightRed': palette.state.error, // 保持一致
+    'terminal.ansiBrightRed': palette.state.error, // Keep consistent
 
-    // Greens (成功/新增/字符串)
+    // Greens (Success/Add/String)
     'terminal.ansiGreen': palette.state.success,
     'terminal.ansiBrightGreen': palette.state.success,
 
-    // Yellows (警告/数字)
+    // Yellows (Warning/Number)
     'terminal.ansiYellow': palette.state.warning,
     'terminal.ansiBrightYellow': palette.state.warning,
 
-    // Blues (目录/函数/链接)
+    // Blues (Directory/Function/Link)
     'terminal.ansiBlue': palette.primary.main,
     'terminal.ansiBrightBlue': palette.primary.main,
 
-    // Magentas (关键字/紫色)
-    'terminal.ansiMagenta': palette.secondary.main || '#c084fc', // 紫色
+    // Magentas (Keyword/Purple)
+    'terminal.ansiMagenta': palette.secondary.main || '#c084fc', // Purple
     'terminal.ansiBrightMagenta': palette.secondary.main || '#c084fc',
 
-    // Cyans (正则/深蓝/青色)
-    'terminal.ansiCyan': palette.state.info, // 青色/天蓝
+    // Cyans (Regex/Dark Blue/Cyan)
+    'terminal.ansiCyan': palette.state.info, // Cyan/Sky Blue
     'terminal.ansiBrightCyan': palette.state.info,
 
-    // Whites (普通文字)
+    // Whites (Normal text)
     'terminal.ansiWhite': palette.text.normal,
-    'terminal.ansiBrightWhite': palette.text.normal, // 有时设为更亮的白
+    'terminal.ansiBrightWhite': palette.text.normal, // Sometimes set to a brighter white
 
-    // --- Search & Find (查找) ---
-    // 与编辑器查找保持一致
+    // --- Search & Find ---
+    // Consistent with editor find
     'terminal.findMatchBackground': palette.state.warning + '50',
     'terminal.findMatchBorder': palette.state.warning,
     'terminal.findMatchHighlightBackground': palette.state.warning + '20',
     'terminal.findMatchHighlightBorder': palette.transparent,
 
-    // --- Shell Integration (命令装饰器 - 左侧小圆点) ---
-    // 默认点：灰色
+    // --- Shell Integration (Command decorators - small dots on the left) ---
+    // Default dot: Gray
     'terminalCommandDecoration.defaultBackground': palette.text.subtle,
-    // 成功点：绿色 (如 exit code 0)
+    // Success dot: Green (e.g., exit code 0)
     'terminalCommandDecoration.successBackground': palette.state.success,
-    // 失败点：红色 (如 exit code 1)
+    // Error dot: Red (e.g., exit code 1)
     'terminalCommandDecoration.errorBackground': palette.state.error,
-    // 辅助线
+    // Guide line
     'terminalCommandGuide.foreground': palette.border.subtle,
 
-    // --- Sticky Scroll (粘性滚动) ---
-    // 终端现在也支持粘性滚动 (显示上一条命令)
+    // --- Sticky Scroll ---
+    // Terminals now support sticky scroll (displays the previous command)
     'terminalStickyScroll.background': palette.bg.panel,
     'terminalStickyScroll.border': palette.border.subtle,
     'terminalStickyScrollHover.background': palette.bg.element,
 
-    // --- Terminal IntelliSense Icons (终端智能提示图标) ---
-    // 当你在终端输入命令并触发建议时显示的图标颜色
+    // --- Terminal IntelliSense Icons ---
+    // Icon colors shown when typing commands and triggering suggestions in the terminal
 
-    // Git 相关
+    // Git related
     'terminalSymbolIcon.branchForeground': palette.primary.main,
     'terminalSymbolIcon.gitCommitForeground': palette.text.muted,
     'terminalSymbolIcon.remoteForeground': palette.text.muted,
 
-    // 文件系统
+    // File system
     'terminalSymbolIcon.folderForeground': palette.primary.main,
     'terminalSymbolIcon.fileForeground': palette.text.normal,
     'terminalSymbolIcon.symbolicLinkFileForeground': palette.text.subtle,
 
-    // 命令参数
+    // Command arguments
     'terminalSymbolIcon.flagForeground': palette.state.warning, // -f, --force
     'terminalSymbolIcon.optionForeground': palette.state.warning,
     'terminalSymbolIcon.argumentForeground': palette.text.normal,
