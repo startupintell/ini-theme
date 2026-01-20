@@ -20,6 +20,22 @@ Designed to provide a focused, high-contrast, and aesthetically pleasing coding 
   </a>
 </div>
 
+## Design Philosophy
+
+The ini Theme is built on a philosophy of **Cognitive Unloading**. We believe that a code editor should recede into the background, allowing the code itself to breathe. Our design is guided by three core principles:
+
+### 1. Simplify（简化）
+
+**Radical Subtraction.** We aggressively remove non-essential visual noise. If an element doesn't aid in understanding the code or the file structure, it is removed. Less decoration means more focus.
+
+### 2. Subdue（弱化）
+
+**Visual Hierarchy.** For elements that cannot be removed (like UI borders, scrollbars, or bracket pairs), we apply visual de-emphasis. By lowering the contrast of secondary elements, we create natural layers where the actual code sits at the highest elevation, while the UI supports it silently from the shadows.
+
+### 3. Whitespace（留白）
+
+**Structure via Geometry.** Instead of relying on heavy lines and boxes, we use alignment, spacing, and typography to define boundaries. We believe that proper leading and padding create a rhythm that makes long-term reading effortless.
+
 ## Compatibility
 
 **Built for VS Code, Perfect for Cursor or Antigravity.**
@@ -28,7 +44,7 @@ Since `ini Theme` is built on the standard VS Code extension API, it works seaml
 
 - **VS Code** (Official)
 - **Cursor** (AI Code Editor)
-- **Antigravity** (Goole AI Code Editor)
+- **Antigravity** (Google AI Code Editor)
 - **Windsurf / Codium** (Open VSX)
 - **GitHub Codespaces**
 - **Gitpod**
@@ -49,7 +65,7 @@ A "Paper" inspired light theme. Clean, crisp, and low-glare. Perfect for bright 
 - **Semantic Highlighting**: Full support for semantic token coloring, distinguishing clearly between variables, parameters, and properties.
 - **Tailwind Palette**: Built on a refined Tailwind CSS color scale for consistent UI harmony.
 - **Detailed UI Customization**: Extensive customization for Workbench, Terminal, Git Graph, and Interactive Windows.
-- **Modern Aesthetic**: Modern, flat, and clean design with subtle borders for a focused experience.
+- **Modern Aesthetic**: Modern, flat, and clean design following our "Simplify & Subdue" philosophy.
 - **Markdown Enhancement**: Includes custom styles for a better markdown preview experience.
 
 ## Configuration
@@ -91,11 +107,13 @@ You can customize the theme through the following settings in VS Code:
 ### Method 4: Command Line
 
 **VS Code / Cursor:**
+
 ```bash
 code --install-extension startupintell.ini-theme
 ```
 
 **Open VSX compatible editors:**
+
 ```bash
 # Download and install manually from Open VSX
 # Or use the editor's built-in extension manager
