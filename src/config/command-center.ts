@@ -23,7 +23,7 @@ export const commandCenterConfig = (palette: ThemePalette) => {
     // --- Inactive Window State ---
     // When switching to another application, fade it out to reduce visual noise
     'commandCenter.inactiveForeground': palette.text.muted,
-    'commandCenter.inactiveBorder': palette.border.subtle + '40', // Lower opacity
+    'commandCenter.inactiveBorder': palette.border.subtle, // Lower opacity
 
     // --- Debugging State ---
     // Background changes to light orange, echoing the Status Bar at the bottom, indicating "debugging"

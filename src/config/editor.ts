@@ -54,7 +54,7 @@ export const editorConfig = (palette: ThemePalette) => {
 
     // --- 7. Whitespace & Guides ---
     // Whitespace characters (dots): Very faint, almost invisible
-    'editorWhitespace.foreground': palette.border.subtle + '50', // Extra transparency
+    'editorWhitespace.foreground': palette.border.subtle, // Extra transparency
     // Indent guides: Very faint
     'editorIndentGuide.background': palette.border.subtle,
     'editorIndentGuide.activeBackground': palette.border.muted, // Active level slightly brighter

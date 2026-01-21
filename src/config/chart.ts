@@ -17,7 +17,7 @@ export const chartConfig = (palette: ThemePalette) => {
 
     // Auxiliary reference lines (Grid/Guides)
     // Strategy: Must be very faint, only to assist reading
-    'chart.guide': palette.border.subtle + '50', // Lower opacity
+    'chart.guide': palette.border.subtle, // Lower opacity
 
     // Main series line (Line Chart default)
     'chart.line': palette.primary.main,
