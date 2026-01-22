@@ -28,7 +28,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
       // For dark theme, use corresponding dark value
       return theme === 'light' ? neutral[200] : neutral[700];
     }
-    
+
     // Default to light (neutral-100 for light, neutral-800 for dark)
     return theme === 'light' ? neutral[100] : neutral[800];
   };
@@ -119,7 +119,7 @@ export const getPalette = (config: ThemeConfig = {}): Palette => {
     primary: {
       main: isBlackPrimary ? neutral[50] : primary[500],
       hover: isBlackPrimary ? neutral[200] : primary[400],
-      surface: isBlackPrimary ? neutral[50] + '15' : primary[500] + '20',
+      surface: isBlackPrimary ? neutral[50] + '25' : primary[500] + '25',
       text: isBlackPrimary ? neutral[100] : primary[400],
     },
 

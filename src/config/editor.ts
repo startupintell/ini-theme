@@ -32,10 +32,10 @@ export const editorConfig = (palette: ThemePalette) => {
     // Unfocused selection: Fainter, or use a very low opacity gray
     'editor.inactiveSelectionBackground': palette.bg.element, // Or palette.primary.surface + '80'
     // Selection highlight (highlight other occurrences of the selected word)
-    'editor.selectionHighlightBackground': palette.bg.app,
+    'editor.selectionHighlightBackground': palette.primary.surface,
     'editor.selectionHighlightBorder': palette.transparent, // Remove border for a clean look
-    'editor.wordHighlightBackground': palette.bg.app,
-    'editor.wordHighlightStrongBackground': palette.bg.app,
+    'editor.wordHighlightBackground': palette.primary.surface,
+    'editor.wordHighlightStrongBackground': palette.primary.surface,
 
     // --- 5. Search & Find ---
     // Current match: Strong highlight (use Warning color or primary accent)
