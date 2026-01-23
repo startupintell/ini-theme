@@ -39,7 +39,7 @@ export const gitConfig = (palette: ThemePalette) => {
 
     // Ignored (Files ignored by .gitignore): Gray
     // Strategy: Must be fainter than normal text (Muted) to make them "invisible" in the list.
-    'gitDecoration.ignoredResourceForeground': palette.text.subtle,
+    'gitDecoration.ignoredResourceForeground': palette.text.muted,
 
     // Conflicting: Red or Purple
     // Scenario: Merge conflicts. Must be very prominent!
