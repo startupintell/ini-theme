@@ -24,15 +24,15 @@ Designed to provide a focused, high-contrast, and aesthetically pleasing coding 
 
 The ini Theme is built on a philosophy of **Cognitive Unloading**. We believe that a code editor should recede into the background, allowing the code itself to breathe. Our design is guided by three core principles:
 
-### 1. Simplify（简化）
+### 1. Simplify
 
 **Radical Subtraction.** We aggressively remove non-essential visual noise. If an element doesn't aid in understanding the code or the file structure, it is removed. Less decoration means more focus.
 
-### 2. Subdue（弱化）
+### 2. Subdue
 
 **Visual Hierarchy.** For elements that cannot be removed (like UI borders, scrollbars, or bracket pairs), we apply visual de-emphasis. By lowering the contrast of secondary elements, we create natural layers where the actual code sits at the highest elevation, while the UI supports it silently from the shadows.
 
-### 3. Whitespace（留白）
+### 3. Whitespace
 
 **Structure via Geometry.** Instead of relying on heavy lines and boxes, we use alignment, spacing, and typography to define boundaries. We believe that proper leading and padding create a rhythm that makes long-term reading effortless.
 

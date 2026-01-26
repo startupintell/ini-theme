@@ -4,7 +4,7 @@
   "publisher": "startupintell",
   "description": "%extension.description%",
   "icon": "icon.png",
-  "version": "1.7.6",
+  "version": "1.7.8",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -21,6 +21,7 @@
     "build:json": "jiti src/build.ts",
     "build:extension": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --platform=node --format=cjs",
     "watch": "npm run build:extension -- --watch",
+    "package": "npm version patch && npm run build && npx @vscode/vsce package",
     "publish": "npm run build && npm run publish:vsce && npm run publish:ovsx",
     "publish:vsce": "npx dotenv-cli -- npx @vscode/vsce publish",
     "publish:ovsx": "npx dotenv-cli -- npx ovsx publish"

@@ -39,8 +39,16 @@ export const activate = (context: vscode.ExtensionContext) => {
         .getConfiguration()
         .update('workbench.colorTheme', 'ini Dark', vscode.ConfigurationTarget.Global);
 
-      // Reload the window to ensure the new theme is applied correctly
-      await vscode.commands.executeCommand('workbench.action.reloadWindow');
+      // Prompt to reload the window
+      const action = await vscode.window.showInformationMessage(
+        'ini Dark theme applied. Reload window to take effect?',
+        'Reload',
+        'Later',
+      );
+
+      if (action === 'Reload') {
+        await vscode.commands.executeCommand('workbench.action.reloadWindow');
+      }
     }),
   );
 
@@ -55,8 +63,16 @@ export const activate = (context: vscode.ExtensionContext) => {
         .getConfiguration()
         .update('workbench.colorTheme', 'ini Light', vscode.ConfigurationTarget.Global);
 
-      // Reload the window to ensure the new theme is applied correctly
-      await vscode.commands.executeCommand('workbench.action.reloadWindow');
+      // Prompt to reload the window
+      const action = await vscode.window.showInformationMessage(
+        'ini Light theme applied. Reload window to take effect?',
+        'Reload',
+        'Later',
+      );
+
+      if (action === 'Reload') {
+        await vscode.commands.executeCommand('workbench.action.reloadWindow');
+      }
     }),
   );
 
@@ -108,7 +124,17 @@ export const activate = (context: vscode.ExtensionContext) => {
 
         // Regenerate themes and reload
         await generateThemes(context, false);
-        await vscode.commands.executeCommand('workbench.action.reloadWindow');
+
+        // Prompt to reload the window
+        const action = await vscode.window.showInformationMessage(
+          `Primary scale set to ${selected.label}. Reload window to take effect?`,
+          'Reload',
+          'Later',
+        );
+
+        if (action === 'Reload') {
+          await vscode.commands.executeCommand('workbench.action.reloadWindow');
+        }
       }
     }),
   );
@@ -144,7 +170,17 @@ export const activate = (context: vscode.ExtensionContext) => {
 
         // Regenerate themes and reload
         await generateThemes(context, false);
-        await vscode.commands.executeCommand('workbench.action.reloadWindow');
+
+        // Prompt to reload the window
+        const action = await vscode.window.showInformationMessage(
+          `Neutral scale set to ${selected.label}. Reload window to take effect?`,
+          'Reload',
+          'Later',
+        );
+
+        if (action === 'Reload') {
+          await vscode.commands.executeCommand('workbench.action.reloadWindow');
+        }
       }
     }),
   );
@@ -175,7 +211,17 @@ export const activate = (context: vscode.ExtensionContext) => {
           .update('ini.theme.borderSubtleColor', selected.value, vscode.ConfigurationTarget.Global);
 
         await generateThemes(context, false);
-        await vscode.commands.executeCommand('workbench.action.reloadWindow');
+
+        // Prompt to reload the window
+        const action = await vscode.window.showInformationMessage(
+          `Border color set to ${selected.label}. Reload window to take effect?`,
+          'Reload',
+          'Later',
+        );
+
+        if (action === 'Reload') {
+          await vscode.commands.executeCommand('workbench.action.reloadWindow');
+        }
       }
     }),
   );
